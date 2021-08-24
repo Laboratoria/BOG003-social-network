@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Signika', sans-serif;
+}
+
+main{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(./img/background-home.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-width: 320px;
+    height: 624px;
+    text-align: center;
+}
+
+header img{
+    width: 240px;
+    margin-top: 30px;
+    align-self: center;
+}
+
+#s-container{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.219);
+    height: 300px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+
+#welcome h2{
+    font-size: 2.4rem;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+#welcome .btn-p{
+    border-radius: 15px;
+    padding: 5px 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    border: none;
+    background: linear-gradient(90deg, #FBCD85 0%, #FF9C00 97.14%, #F6AC37 97.14%, #F49C13 97.15%);
+    color: white;
+    font-family: 'Signika', sans-serif;
+    
+}
