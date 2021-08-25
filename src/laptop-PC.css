@@ -1,0 +1,40 @@
+/* ---------- Laptop 1440 x 900 ---------- */
+@media(min-width:1400px){
+  main{
+    background-image: url(./img/backgroundPC1.png);
+  }
+
+  #s-container{
+    width: 35vw;
+    margin: 16.08%;
+    padding: 2%;
+  }
+
+  #img-rabbit{
+    display: none;
+  }
+
+  #logo{
+    margin-top: 2%;
+    width: 30vw;
+  }
+
+  #welcome h2{
+      font-size: 5rem;
+  }
+
+  #welcome .btn-p{
+    width: 15vw;
+    font-size: 2.5rem;
+    padding: 1.5% 0%;
+    border-radius: 25px;
+  }
+}
+
+/* ---------- PC 1920 x 1080 ---------- */
+
+@media(min-width:1900px){
+  #s-container{
+    margin: 11.08%;
+  }
+}
