@@ -33,14 +33,11 @@ main{
     border-radius: 15px;
     box-shadow: 1px 3px 10px #733527;
     height: auto;
-    top: 24vh;
-    margin: 10% 0%;
-    display: flex;
+    margin: 60% 0%;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: 5%;
-    margin-bottom: 10%;
+    padding: 5% 0%;
 }
 
 /* ---*** HEADER ***--- */
@@ -82,7 +79,6 @@ h2{
     font-size: 1.5rem;
     border: none;
     background: linear-gradient(90deg, #FFBB5D 0%, #E88E48 65.36%, #FF824F 100%);
-    color: white;
     font-family: 'Signika', sans-serif;
 }
 
@@ -117,7 +113,7 @@ button.btn-google {
 }
 
 #logo-google{
-    width: 10%;
+    width: 12%;
 }
 
 .btn-s{
@@ -126,10 +122,10 @@ button.btn-google {
     padding: 2% 0%;
     margin: 2.5% 0%;
     font-size: 1.5rem;
-    border: 2px solid #FFBB5D;
-    color: black;
+    border: 2px outset #FFBB5D;
     font-family: 'Signika', sans-serif;
     background: none;
+    font-weight: 600;
 }
 
 a {
@@ -138,5 +134,5 @@ a {
 }
 
 .btn-s a {
-    color: black;
+    color: #434A73;
 }

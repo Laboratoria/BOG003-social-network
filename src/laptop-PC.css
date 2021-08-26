@@ -6,7 +6,6 @@
 
   #s-container{
     width: 30vw;
-    top: 20vh;
   }
 
   #img-rabbit{
@@ -18,11 +17,16 @@
     width: 25vw;
   }
 
-  #welcome h2{
+h2{
       font-size: 3.5rem;
   }
 
-  #welcome .btn-p{
+  .input-register{
+    width: 70%;
+    font-size: 2rem;
+  }
+
+  .btn-p, .btn-s{
     width: 12vw;
     font-size: 2rem;
     padding: 1% 0%;
@@ -33,11 +37,15 @@
 /* ---------- PC 1920 x 1080 ---------- */
 
 @media(min-width:1600px){
-  #welcome h2{
+  #s-container{
+    margin: 40% 0%;
+  }
+
+  h2{
       font-size: 4.5rem;
   }
 
-  #welcome .btn-p{
+  .btn-p{
     font-size: 2.5rem;
   }
 }

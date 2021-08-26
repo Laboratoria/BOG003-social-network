@@ -2,6 +2,6 @@
 import { templateRegister } from './lib/view/template-register.js'
 import { myFunction } from './lib/index.js'
 
-myFunction();
+myFunction()
 
-document.getElementById("s-container").innerHTML = templateRegister();
+document.getElementById('s-container').innerHTML = templateRegister()
