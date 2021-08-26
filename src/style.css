@@ -40,6 +40,7 @@ main{
     justify-content: center;
     position: relative;
     padding: 5%;
+    margin-bottom: 10%;
 }
 
 /* ---*** HEADER ***--- */
@@ -64,15 +65,16 @@ right: 0;
   flex-direction: column;
 }
 
-#welcome h2{
+h2{
     font-size: 3rem;
     margin-top: 25px;
     margin-bottom: 20px;
     font-weight: 900;
     color: #434A73;
+    width: 100%;
 }
 
-#welcome .btn-p{
+.btn-p{
     border-radius: 15px;
     width: 35vw;
     padding: 2% 0%;
@@ -82,4 +84,59 @@ right: 0;
     background: linear-gradient(90deg, #FFBB5D 0%, #E88E48 65.36%, #FF824F 100%);
     color: white;
     font-family: 'Signika', sans-serif;
+}
+
+.background-title{
+    background-color: rgba(232, 142, 72, 0.6);
+}
+
+#register {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-register{
+    border-style: none;
+    border-bottom: 2px solid #E88E48;
+    padding: 2% 5%;
+    margin: 2% 8%;
+    font-size: 15px;
+}
+
+button.btn-google {
+    border: none;
+    background: white;
+    margin-top: 10%;
+    margin-bottom: 8%;
+}
+#btn-g{
+    margin-top: 10%;
+}
+
+#logo-google{
+    width: 10%;
+}
+
+.btn-s{
+    border-radius: 15px;
+    width: 35vw;
+    padding: 2% 0%;
+    margin: 2.5% 0%;
+    font-size: 1.5rem;
+    border: 2px solid #FFBB5D;
+    color: black;
+    font-family: 'Signika', sans-serif;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-s a {
+    color: black;
 }
