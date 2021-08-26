@@ -11,19 +11,18 @@ html{
 
 body{
   background-color: #FFBB5D;
+  background-image: url(./img/background2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(./img/background2.png);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
     min-width: 320px;
     height: auto;
     text-align: center;
@@ -34,7 +33,8 @@ main{
     border-radius: 15px;
     box-shadow: 1px 3px 10px #733527;
     height: auto;
-    margin: 63% 0%;
+    top: 220px;
+    margin: 10% 0%;
     display: flex;
     flex-direction: column;
     justify-content: center;
