@@ -1,0 +1,138 @@
+/*------------***** Mobile pixel 2 411 x 731 *****----------- */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Signika', sans-serif;
+}
+
+body{
+  background-color: #FFBB5D;
+  background-image: url(./img/background2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main{
+    min-width: 320px;
+    height: auto;
+    text-align: center;
+}
+/* -------------------- Contenedor Principal ----------------------*/
+#s-container{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 1px 3px 10px #733527;
+    height: auto;
+    margin: 60% 0%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 5% 0%;
+}
+
+/* ---*** HEADER ***--- */
+#img-rabbit{
+position: absolute;
+width: 45vw;
+top: -109px;
+right: 0;
+}
+
+#logo{
+    width: 240px;
+    margin-top: 30px;
+    align-self: center;
+}
+
+/* ---*** VISTAS ***--- */
+#welcome{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h2{
+    font-size: 3rem;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: #434A73;
+    width: 100%;
+}
+
+.btn-p{
+    border-radius: 15px;
+    width: 35vw;
+    padding: 2% 0%;
+    margin: 2.5% 0%;
+    font-size: 1.5rem;
+    border: none;
+    background: linear-gradient(90deg, #FFBB5D 0%, #E88E48 65.36%, #FF824F 100%);
+    font-family: 'Signika', sans-serif;
+}
+
+.background-title{
+    background-color: rgba(232, 142, 72, 0.6);
+}
+
+#register {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-register{
+    border-style: none;
+    border-bottom: 2px solid #E88E48;
+    padding: 2% 5%;
+    margin: 2% 8%;
+    font-size: 15px;
+}
+
+button.btn-google {
+    border: none;
+    background: white;
+    margin-top: 10%;
+    margin-bottom: 8%;
+}
+#btn-g{
+    margin-top: 10%;
+}
+
+#logo-google{
+    width: 12%;
+}
+
+.btn-s{
+    border-radius: 15px;
+    width: 35vw;
+    padding: 2% 0%;
+    margin: 2.5% 0%;
+    font-size: 1.5rem;
+    border: 2px outset #FFBB5D;
+    font-family: 'Signika', sans-serif;
+    background: none;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-s a {
+    color: #434A73;
+}
