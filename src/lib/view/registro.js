@@ -2,8 +2,12 @@ export const createRegisterView = () => {
   const registerSection = document.createElement("section");
   const registerView = `
   <div class="brand">
-    <div class="logo-long"><img src="../../images.logo_long" alt="Behind Code"></div>
-    <div class="señor"><img src="../../images/señor.png" alt="Logo for desktop"></div>
+    <div class="logo-long">
+      <img src="images/logo_long.png" alt="Behind Code">
+    </div>
+    <div class="señor">
+      <img src="images/señor.png" alt="Logo for desktop">
+    </div>
   </div>
   <div class="register">
     <h1>Formulario de Registro</h1>
@@ -21,7 +25,7 @@ export const createRegisterView = () => {
     <p>Ingresa con </p>
     <div class="Google-login">
       <a href="/">
-        <img src="../../images/google.png" alt="Log in with Google">
+        <img src="images/google.png" alt="Log in with Google">
       </a>
     </div>    
   </div>`;
