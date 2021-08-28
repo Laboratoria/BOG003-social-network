@@ -1,32 +1,32 @@
-import { crearCuenta } from './view/ingreso.js';
-import { irAInicio } from './view/registro.js'; 
+import { createLogInView } from './view/ingreso.js'; 
+import { createRegisterView } from './view/registro.js'; 
 
 export const changeRoute = (hash) => {
     if(hash === '#/ingreso'){
         return showView(hash)
-    } else if (hash === '#/registro'){
+    } else if(hash === '#/registro'){
         return showView(hash)
-    } else {
+    } else{
         return showView(hash)
     }
 }
 
 const showView = (hash) => {
-    const containerRoot = document.getElementById('root');
-    containerRoot.innerHTML = crearCuenta();
+    const mainSection = document.getElementById('main-section');
+    mainSection.innerHTML = '';
 
-    switch (hash) {
-        case '#/':
-            containerRoot.innerHTML = crearCuenta();
-            break;
+    switch(hash){
+        /* case '#/':
+            mainSection.innerHTML = createLogInView();
+            break; */
         case '#/ingreso':
-            containerRoot.innerHTML = crearCuenta();
+            mainSection.appendChild(createLogInView());
             break;
         case '#/registro':
-            containerRoot.innerHTML= irAInicio();
+            mainSection.appendChild(createRegisterView());
             break;
         default:
-            containerRoot.innerHTML = `<h2>No Existe</h2>`;           
+            mainSection.innerHTML = `<h2>No Existe</h2>`;           
 
     }    
 }
