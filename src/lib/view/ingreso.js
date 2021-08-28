@@ -2,9 +2,15 @@ export const createLogInView = () => {
   const loginSection = document.createElement("section");
   const loginView = `
   <div class="brand">
-    <div class="niño"><img src="../../images/niño.png" alt="Logo for mobile"></div>
-    <div class="logo-long"><img src="../../images.logo_long" alt="Behind Code"></div>
-    <div class="señor"><img src="../../images/señor.png" alt="Logo for desktop"></div>
+    <div class="niño">
+      <img src="images/niño.png" alt="Logo for mobile">
+    </div>
+    <div class="logo-long">
+      <img src="images/logo_long.png" alt="Behind Code">
+    </div>
+    <div class="señor">
+      <img src="images/señor.png" alt="Logo for desktop">
+    </div>
   </div>
   <div class="log-in">
     <h1>Ingresa a tu cuenta</h1>
@@ -17,7 +23,7 @@ export const createLogInView = () => {
     <p>Ingresa con tu cuenta de Google</p>
     <div class="Google-login">
       <a href="/">
-        <img src="../../images/google.png" alt="Log in with Google">
+        <img src="images/google.png" alt="Log in with Google">
       </a>
     </div>
     <p>¿No tienes una cuenta?</p>
