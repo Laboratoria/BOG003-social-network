@@ -19,7 +19,7 @@ export const createLogInView = () => {
       <input type="password" name="password" placeholder="Contraseña" required>
       <button type="submit">Ingresar</button>
     </form>
-    <p>or</p>
+    <p class="or">or</p>
     <p>Ingresa con tu cuenta de Google</p>
     <div class="Google-login">
       <a href="/">

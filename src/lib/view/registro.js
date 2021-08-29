@@ -9,7 +9,7 @@ export const createRegisterView = () => {
       <img src="images/señor.png" alt="Logo for desktop">
     </div>
   </div>
-  <div class="register">
+  <div class="log-in">
     <h1>Formulario de Registro</h1>
     <form method="post">
       <input type="text" name="name" placeholder="Nombre" required>
@@ -18,10 +18,10 @@ export const createRegisterView = () => {
       <input type="password" name="password" placeholder="Contraseña" required>
       <button type="submit">Regístrate</button>
     </form>
-    <div class="existing-account">
+    <div class="new-account">
     <a href="#/ingreso">¿Ya tienes una cuenta?</a>
     </div>
-    <p>or</p>
+    <p class ="or">or</p>
     <p>Ingresa con </p>
     <div class="Google-login">
       <a href="/">
