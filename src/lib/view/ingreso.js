@@ -31,6 +31,6 @@ export const createLogInView = () => {
       <a href="#/registro">Crea una cuenta AQUI</a>
     </div>
   </div>`;
-  loginSection.innerHTML = loginView;  
+  loginSection.innerHTML = loginView;
   return loginSection;
-}
+};

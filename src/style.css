@@ -10,11 +10,11 @@ body {
     background-color: var(--black-code);
     font-family: 'Roboto', sans-serif;
 }
-main#main-section {
+main #main-section {
     min-height: 100vh;
 }
 section{
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
     justify-items: center;
@@ -116,9 +116,3 @@ p.with{
 
 /* MEDIA Q */
 
-@media(min-width:768px) {
-    .señor{
-        display: block;
-    }
-
-}

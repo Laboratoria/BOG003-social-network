@@ -1,0 +1,22 @@
+@media(min-width:768px) {
+    .señor{
+        display: block;
+        left: -2%;
+        
+    }
+    .niño{
+        display: none;
+    }
+
+    .brand {
+        display: grid;
+        grid-template-columns:repeat(3, 2fr);
+        grid-template-rows: repeat(3, 200px);
+        grid-gap: 40px;
+   
+    
+        
+    }
+
+
+}
