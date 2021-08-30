@@ -5,7 +5,7 @@ export const createRegisterView = () => {
       <div class="logo-long">
         <img src="images/logo_long.png" alt="Behind Code">
       </div>
-      <div class="señor">
+      <div class="hombre">
         <img src="images/señor.png" alt="Logo for desktop">
       </div>
     </div>

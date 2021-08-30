@@ -19,13 +19,13 @@ section{
     align-items: center;
     justify-items: center;
 }
-.señor{
+.hombre{
     display: none;
 }
-.niño {
+.joven {
     text-align: center;
 }
-.niño img{
+.joven img{
    width: 200px; 
 }
 .logo-long {
@@ -114,5 +114,5 @@ p.with{
     padding: 2rem;
 }
 
-/* MEDIA Q */
+
 

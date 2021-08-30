@@ -2,13 +2,13 @@ export const createLogInView = () => {
   const loginSection = document.createElement("section");
   const loginView = `
   <div class="brand">
-    <div class="niño">
+    <div class="joven">
       <img src="images/niño.png" alt="Logo for mobile">
     </div>
     <div class="logo-long">
       <img src="images/logo_long.png" alt="Behind Code">
     </div>
-    <div class="señor">
+    <div class="hombre">
       <img src="images/señor.png" alt="Logo for desktop">
     </div>
   </div>
