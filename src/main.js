@@ -7,6 +7,7 @@ import { changeRoute } from "./lib/router.js";
 
 const init = () => {
   document.getElementById('main-section').appendChild(createLogInView());
+  changeRoute(window.location.hash);
   window.addEventListener('hashchange', () => {
     /* myFunction(); */
     changeRoute(window.location.hash);
@@ -14,3 +15,4 @@ const init = () => {
 }
 
 window.addEventListener('load', init);
+

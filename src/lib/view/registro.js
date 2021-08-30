@@ -1,3 +1,5 @@
+import { createUser } from '../api/firebaseConnection.js';
+
 export const createRegisterView = () => {
   const registerSection = document.createElement("section");
   const registerView = `
@@ -16,7 +18,7 @@ export const createRegisterView = () => {
         <input type="text" name="lastName" placeholder="Apellido" required>
         <input type="email" name="email" placeholder="Correo" required>
         <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit">Regístrate</button>
+        <button id="register" type="submit">Regístrate</button>
       </form>
       <div class="new-account">
       <a href="#/ingreso">¿Ya tienes una cuenta?</a>
@@ -30,5 +32,15 @@ export const createRegisterView = () => {
       </div>    
   </div>`;
   registerSection.innerHTML = registerView;
+  setTimeout(() => {
+    addListeners();
+  }, 0);
   return registerSection;
 }; 
+
+const addListeners = () => {
+  const btnRegister = document.getElementById('register');
+  btnRegister.addEventListener('click', () => createUser('karen@gmail.com', '123456*Ab'))
+}
+
+//obtener la info del usuario
