@@ -84,9 +84,12 @@ form button {
   border: 2px solid #a54bd7;
   cursor: pointer;
   transition: all 0.5s;
+  font-weight: bold;
+  font-size: 18px;
 }
 form button:hover {
   box-shadow: 2px 2px 2px 0px var(--violet-code);
+  padding: 2px;
 }
 
 /*Elementos texto*/
