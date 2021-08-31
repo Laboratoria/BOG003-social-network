@@ -4,7 +4,7 @@ let email;
 let password;
 
 export const createRegisterView = () => {
-  const registerSection = document.createElement("section");
+  const registerSection = document.createElement('section');
   const registerView = `
   <div class="brand">
       <div class="logo-long">
@@ -36,25 +36,24 @@ export const createRegisterView = () => {
   </div>`;
   registerSection.innerHTML = registerView;
   setTimeout(() => {
+    // eslint-disable-next-line no-use-before-define
     addListeners();
   }, 1000);
   return registerSection;
-}; 
+};
 
 /* const userName = document.getElementById('userName').value;
 const lastName = document.getElementById('lastName').value; */
 
-
-
 const addListeners = () => {
   const btnRegister = document.getElementById('register');
-  btnRegister.addEventListener('click', (e) => {
+  btnRegister.addEventListener('click', () => {
     email = document.getElementById('email').value;
     password = document.getElementById('password').value;
     createUser(email, password);
-  })
-}
+  });
+};
 
-//obtener la info del usuario
+// obtener la info del usuario
 
 /* npm install firebase-mock --save-dev */

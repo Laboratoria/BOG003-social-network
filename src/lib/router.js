@@ -1,25 +1,25 @@
+/* eslint-disable no-console */
+
 import { createLogInView } from './view/ingreso.js';
 import { createRegisterView } from './view/registro.js';
 
 export const changeRoute = (hash) => {
-    console.log(hash);
-    const mainSection = document.getElementById('main-section');
-    mainSection.innerHTML = '';
+  console.log(hash);
+  const mainSection = document.getElementById('main-section');
+  mainSection.innerHTML = '';
 
-    switch (hash) {
-        case '':
-            mainSection.appendChild(createLogInView());
-            console.log('iniciando app');
-            break;
-        case '#/ingreso':
-            mainSection.appendChild(createLogInView());
-            break;
-        case '#/registro':
-            mainSection.appendChild(createRegisterView());
-            break;
-        default:
-            mainSection.innerHTML = `<h2 class = "error404" >No Existe</h2>`;
-
-    }
-}
-
+  switch (hash) {
+    case '':
+      mainSection.appendChild(createLogInView());
+      console.log('iniciando app');
+      break;
+    case '#/ingreso':
+      mainSection.appendChild(createLogInView());
+      break;
+    case '#/registro':
+      mainSection.appendChild(createRegisterView());
+      break;
+    default:
+      mainSection.innerHTML = '<h2 class = "error404" >No Existe</h2>';
+  }
+};
