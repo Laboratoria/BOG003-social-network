@@ -5,7 +5,7 @@ export const createRegisterView = () => {
       <div class="logo-long">
         <img src="images/logo_long.png" alt="Behind Code">
       </div>
-      <div class="hombre">
+      <div class="old-man">
         <img src="images/señor.png" alt="Logo for desktop">
       </div>
     </div>
@@ -31,4 +31,4 @@ export const createRegisterView = () => {
   </div>`;
   registerSection.innerHTML = registerView;
   return registerSection;
-}; 
+};

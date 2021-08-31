@@ -1,118 +1,128 @@
 :root {
-    --black-code:#333333;
-    --violet-code: #8803D2;
-    --white-code: #ffffff;
-    --blue-code: #A54BD7;
-  }
+  --black-code: #292828;
+  --violet-code: #8803d2;
+  --white-code: #ffffff;
+  --blue-code: #a54bd7;
+}
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--black-code);
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--black-code);
+  font-family: "Roboto", sans-serif;
 }
 main #main-section {
-    min-height: 100vh;
+  min-height: 100vh;
 }
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  padding: 15px;
 }
-.hombre{
-    display: none;
+/*Imagenes*/
+.old-man {
+  display: none;
 }
-.joven {
-    text-align: center;
+.young-guy {
+  text-align: center;
 }
-.joven img{
-   width: 200px; 
+.young-guy img {
+  width: 200px;
+  margin: 5% 5% 5% 5%;
 }
 .logo-long {
-    text-align: center;
+  text-align: center;
 }
-.logo-long img{
-    width: 150px;
+.logo-long img {
+  width: 150px;
 }
+
+.Google-login img {
+  width: 40px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+/*Formularios*/
+
 .log-in {
-    border: 2px solid var(--violet-code);
-    padding: 1rem;
+  border: 2px solid var(--violet-code);
+  padding: 1rem;
+  margin: 2% 2% 2% 4%;
 }
-.log-in h1{
-    text-align: center;
-    color:var(--white-code);
+.log-in h1 {
+  text-align: center;
+  color: var(--white-code);
 }
-form input{
-    width: 100%;
-    height: 30px;
-    margin-bottom: 1rem;
-    border: 2px solid var(--violet-code);
-    color:var(--white-code);
-    background-color: var(--black-code);
-    border-radius: 10px;
-    transition: all 0.5s;
+form input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 1rem;
+  border: 2px solid var(--violet-code);
+  color: var(--white-code);
+  background-color: var(--black-code);
+  border-radius: 10px;
+  transition: all 0.5s;
+  align-content: center;
 }
-form input:focus-visible{
-    outline:  var(--violet-code);
-    box-shadow: 2px 2px 2px 0px var(--violet-code);
+form input:focus-visible {
+  outline: var(--violet-code);
+  box-shadow: 2px 2px 2px 0px var(--violet-code);
 }
-form button{
-    background-color: var(--violet-code);
-    color: var(--white-code);
-    margin: 0 auto;
-    display: block;
-    width: 150px;
-    height: 40px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 4px 0px var(--violet-code);
-    border: 2px solid #A54BD7;
-    cursor: pointer;
-    transition: all 0.5s;
+form button {
+  background-color: var(--violet-code);
+  color: var(--white-code);
+  margin: 0 auto;
+  display: block;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px 0px var(--violet-code);
+  border: 2px solid #a54bd7;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-form button:hover{
-    box-shadow: 2px 2px 2px 0px var(--violet-code);
-    
-}
-p{
-    color:var(--white-code);
-}
-.log-in p{
-    text-align: center;
-}
-p.or{
-    position: relative;
-}
-p.or::after{
-    content: "";
-    position: absolute;
-    width: 40%;
-    border-bottom: 2px solid #fff;
-    bottom: 40%;
-    left: 0;
-}
-p.or::before{
-    content: "";
-    position: absolute;
-    width: 40%;
-    border-bottom: 2px solid #fff;
-    bottom: 40%;
-    right: 0;
-}
-p.with{
-    text-align: center;
-}
-.Google-login img{
-    width: 40px;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-}
-.new-account a{
-    color:#18A0FB;
-    text-align: center;
-    display: block;
-    padding: 2rem;
+form button:hover {
+  box-shadow: 2px 2px 2px 0px var(--violet-code);
 }
 
+/*Elementos texto*/
+p {
+  color: var(--white-code);
+}
+.log-in p {
+  text-align: center;
+}
+p.or {
+  position: relative;
+}
+p.or::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  border-bottom: 2px solid #fff;
+  bottom: 40%;
+  left: 0;
+}
+p.or::before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  border-bottom: 2px solid #fff;
+  bottom: 40%;
+  right: 0;
+}
+p.with {
+  text-align: center;
+}
 
-
+.new-account a {
+  color: #18a0fb;
+  text-align: center;
+  display: block;
+  padding: 2rem;
+  text-decoration: none;
+}

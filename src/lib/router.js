@@ -1,12 +1,12 @@
-import { createLogInView } from './view/ingreso.js'; 
-import { createRegisterView } from './view/registro.js'; 
+import { createLogInView } from './view/ingreso.js';
+import { createRegisterView } from './view/registro.js';
 
 export const changeRoute = (hash) => {
-    if(hash === '#/ingreso'){
+    if (hash === '#/ingreso') {
         return showView(hash)
-    } else if(hash === '#/registro'){
+    } else if (hash === '#/registro') {
         return showView(hash)
-    } else{
+    } else {
         return showView(hash)
     }
 }
@@ -15,7 +15,7 @@ const showView = (hash) => {
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = '';
 
-    switch(hash){
+    switch (hash) {
         /* case '#/':
             mainSection.innerHTML = createLogInView();
             break; */
@@ -26,7 +26,7 @@ const showView = (hash) => {
             mainSection.appendChild(createRegisterView());
             break;
         default:
-            mainSection.innerHTML = `<h2>No Existe</h2>`;           
+            mainSection.innerHTML = `<h2>No Existe</h2>`;
 
-    }    
+    }
 }

@@ -1,22 +1,36 @@
 @media(min-width:768px) {
-    .hombre{
+    .old-man{
         display: block;
-        left: -2%;
-        
+        margin: 2% 2% 2% 2%;
+        padding: 10px;
+        left: -10%;
+        position: relative;
     }
-    .joven{
+    .young-guy{
         display: none;
     }
 
-    .brand {
-        display: grid;
-        grid-template-columns:repeat(3, 2fr);
-        grid-template-rows: repeat(3, 200px);
-        grid-gap: 40px;
-   
-    
-        
+    section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        padding: 15px;
     }
+
+    .log-in{
+        
+        margin: 10% 2% 10% 2%;
+        right: 8%;
+        padding-top: 20px;
+
+    }
+
+    .logo-long img {
+        width: 250px;
+        padding: 5px;
+      }
 
 
 }
