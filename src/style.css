@@ -122,6 +122,10 @@ p.with {
   text-align: center;
 }
 
+.error404 {
+  color: #fff;
+}
+
 .new-account a {
   color: #18a0fb;
   text-align: center;

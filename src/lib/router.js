@@ -7,8 +7,9 @@ export const changeRoute = (hash) => {
     mainSection.innerHTML = '';
 
     switch (hash) {
-        case '#/':
+        case '':
             mainSection.appendChild(createLogInView());
+            console.log('iniciando app');
             break;
         case '#/ingreso':
             mainSection.appendChild(createLogInView());
@@ -17,7 +18,7 @@ export const changeRoute = (hash) => {
             mainSection.appendChild(createRegisterView());
             break;
         default:
-            mainSection.innerHTML = `<h2>No Existe</h2>`;
+            mainSection.innerHTML = `<h2 class = "error404" >No Existe</h2>`;
 
     }
 }
