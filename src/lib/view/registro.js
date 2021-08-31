@@ -36,9 +36,6 @@ export const createRegisterView = () => {
     addListeners();
   }, 0);
   return registerSection;
-<<<<<<< HEAD
-};
-=======
 }; 
 
 const addListeners = () => {
@@ -47,4 +44,3 @@ const addListeners = () => {
 }
 
 //obtener la info del usuario
->>>>>>> 15fc516e1145d11a55bc10d7b3c428e9ca54fa6d
