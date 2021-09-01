@@ -21,7 +21,7 @@ export const createRegisterView = () => {
         <input id="lastName" type="text" name="lastName" placeholder="Apellido" required>
         <input id="email" type="email" name="email" placeholder="Correo" required>
         <input id="password" type="password" name="password" placeholder="Contraseña" required>
-        <button id="register" type="submit">Regístrate</button>
+        <button id="register">Regístrate</button>
       </form>
       <div class="new-account">
       <a href="#/ingreso">¿Ya tienes una cuenta?</a>
@@ -47,10 +47,11 @@ const lastName = document.getElementById('lastName').value; */
 
 const addListeners = () => {
   const btnRegister = document.getElementById('register');
-  btnRegister.addEventListener('click', () => {
+  btnRegister.addEventListener('click', (e) => {
     email = document.getElementById('email').value;
     password = document.getElementById('password').value;
     createUser(email, password);
+    e.preventDefault();
   });
 };
 

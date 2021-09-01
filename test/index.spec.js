@@ -6,3 +6,5 @@ describe('myFunction', () => {
     expect(typeof myFunction).toBe('function');
   });
 });
+
+// npm install firebase-mock --save-dev
