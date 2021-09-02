@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
-//Importar funcion "Register" desde carpeta register.js
+//Importar funcion "Register" desde archivo register.js
 import { register } from './lib/templates/register.js';
 
 
