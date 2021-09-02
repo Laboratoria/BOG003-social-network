@@ -1,18 +1,12 @@
-import Home from '../views/home.js';
+import Home from '../controllers/index.controller.js';
 
-const content = document.getElementById('root');
+let content = document.getElementById('root');
 
 const router = (route) => {
-
+content.innerHTML = "";
    switch(route) {
 
-    case '':
-
-        const currentHost = window.location.href;
-        // Navigate to the Location.reload article by replacing this page
-       
-        return window.location.replace(`${currentHost}#/`);
-
+    
     case '#/': 
         return content.appendChild(Home());
      
