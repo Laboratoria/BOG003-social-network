@@ -11,13 +11,43 @@
     margin: auto;
     /*Flex*/
     display: flex;
-    /*flex-flow: wrap row;*/
+    justify-content: center;
+    flex-flow: row nowrap;
 }
 
 
-/* estilos container formulario */
+/* div que contiene los estilos de bienvenida */
+.welcomeContainer{
+    
+    background-color: aquamarine;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 30px;
+
+}
+
 h1{
-    background-color: aqua;
-    border: black;
-    color: blue;
+    
+}
+
+.logo{
+    
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+/*div que contiene los estilos del formulario*/
+.formContainer{
+    background-color: beige;
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
 }
