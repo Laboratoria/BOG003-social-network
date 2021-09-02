@@ -1,8 +1,5 @@
 import { createUser } from '../api/firebaseConnection.js';
 
-let email;
-let password;
-
 export const createRegisterView = () => {
   const registerSection = document.createElement("section");
   const registerView = `
@@ -17,14 +14,16 @@ export const createRegisterView = () => {
     <div class="log-in">
       <h1>Formulario de Registro</h1>
       <form method="post">
-        <input id="userName" type="text" name="name" placeholder="Nombre" required>
-        <input id="lastName" type="text" name="lastName" placeholder="Apellido" required>
+        <input id="userName" type="text" name="name" placeholder="Nombre" min-length="2"required>
+        <input id="lastName" type="text" name="lastName" placeholder="Apellido" min-length="2" required>
         <input id="email" type="email" name="email" placeholder="Correo" required>
         <input id="password" type="password" name="password" placeholder="Contraseña" required>
+        <input id="passwordTwo" type="password" name="passwordTwo" placeholder="Confirma tu contraseña" required>
+        <p id="message"></p>
         <button id="register" type="submit">Regístrate</button>
       </form>
       <div class="new-account">
-      <a href="#/ingreso">¿Ya tienes una cuenta?</a>
+        <a href="#/ingreso">¿Ya tienes una cuenta?</a>
       </div>
       <p class ="or">or</p>
       <p>Ingresa con </p>
@@ -35,26 +34,91 @@ export const createRegisterView = () => {
       </div>    
   </div>`;
   registerSection.innerHTML = registerView;
-  setTimeout(() => {
-    addListeners();
-  }, 1000);
+
+  const btnRegister = registerSection.querySelector('#register');
+  const nameInput = registerSection.querySelector('#userName');
+  const lastNameInput = registerSection.querySelector('#lastName');
+  const emailInput = registerSection.querySelector('#email');
+  const passwordInput = registerSection.querySelector('#password');
+  const passwordInputConfirm = registerSection.querySelector('#passwordTwo');
+  const messageContainer = registerSection.querySelector('#message');
+
+  /* Evento para enviar el formulario */
+  btnRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    const userName = nameInput.value;
+    const lastName = lastNameInput.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    const passwordConfirm = passwordInputConfirm.value;
+
+    /* validaciones de campos */
+    if(userName === ''|| lastName === '' || email === '' || password === '' || passwordConfirm === ''){
+      messageContainer.setAttribute('class', 'error');
+      messageContainer.innerHTML = "❌ Hay campos vacíos";
+    } else if(userName.length < 2|| lastName.length < 2){
+      messageContainer.setAttribute('class', 'error');
+      messageContainer.innerHTML = "❌ Tu nombre y apellido deben tener mínimo 2 caracteres";
+    } else if(password !== passwordConfirm){
+      messageContainer.setAttribute('class', 'error');
+      messageContainer.innerHTML = "❌ Tu contraseña no coincide";
+    }
+    else {
+      createUser(email, password)
+      .then(()=>{
+        messageContainer.removeAttribute('class', 'error');
+        messageContainer.innerHTML = "✅ Gracias por registrarte";
+      }).catch((error) => {
+        /* validaciones de firebase */
+        var errorCode = error.code;
+        switch (errorCode) {
+          case "auth/invalid-email":
+            messageContainer.setAttribute('class', 'error');
+            messageContainer.innerHTML = "❌ Ingrese un correo válido";
+            break;
+          
+          case "auth/weak-password":
+            messageContainer.setAttribute('class', 'error');
+            messageContainer.innerHTML = "❌ La contraseña debe tener mínimo 6 caracteres";
+            break;
+
+          case "auth/email-already-in-use":
+            messageContainer.setAttribute('class', 'error');
+            messageContainer.innerHTML = "❌ El correo ya está registrado";
+            break;
+        }
+      });
+    }
+  })
+  
+  /* Quitar el mensaje de error cuando el usuario escriba */
+  const clearErrorMessage = (e) => {
+    if(e.target.tagName === 'INPUT'){
+      messageContainer.innerHTML = '';
+    }
+  }
+  
+  const form = registerSection.querySelector('form');
+  form.addEventListener('keyup', clearErrorMessage); 
+
   return registerSection;
 }; 
 
-/* const userName = document.getElementById('userName').value;
-const lastName = document.getElementById('lastName').value; */
-
-
-
-const addListeners = () => {
-  const btnRegister = document.getElementById('register');
-  btnRegister.addEventListener('click', (e) => {
-    email = document.getElementById('email').value;
-    password = document.getElementById('password').value;
-    createUser(email, password);
-  })
-}
-
-//obtener la info del usuario
-
 /* npm install firebase-mock --save-dev */
+
+
+//Tomar el nombre y apellido del usuario
+/* createUser(email, password)
+      .then((userCredential)=>{
+        const user = firebase.auth().currentUser;
+        user.updateProfile({
+          displayName: "Jane Q. User"    
+        }).then(() => {
+          console.log(user);
+          // ...
+        }).catch((error) => {
+          // en la otra vista verificar si existe o noy
+          // ...
+        });  
+        messageContainer.innerHTML = "Gracias por registrarte";
+      }) */
