@@ -1,4 +1,23 @@
+/* Limpiar estilos predeterminados e ingresar estilos globales */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.app{
+    width: 100%;
+    margin: auto;
+    /*Flex*/
+    display: flex;
+    /*flex-flow: wrap row;*/
+}
 
 
 /* estilos container formulario */
-.container
+h1{
+    background-color: aqua;
+    border: black;
+    color: blue;
+}
