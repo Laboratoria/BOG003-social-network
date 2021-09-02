@@ -29,19 +29,20 @@
 }
 
 h1{
-    
+    background-color: rgb(147, 25, 204); 
 }
 
 .logo{
-    
+    background-color: rgb(27, 218, 154);
 }
 
 h2{
+    background-color: rgb(221, 33, 190);
 
 }
 
 h3{
-
+    background-color: rgb(12, 126, 21);
 }
 
 /*div que contiene los estilos del formulario*/
