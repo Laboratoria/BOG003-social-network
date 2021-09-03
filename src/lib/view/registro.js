@@ -48,6 +48,7 @@ export const createRegisterView = () => {
     e.preventDefault();
     const userName = nameInput.value;
     const lastName = lastNameInput.value;
+    const fullName = userName + ' ' + lastName;
     const email = emailInput.value;
     const password = passwordInput.value;
     const passwordConfirm = passwordInputConfirm.value;
@@ -64,7 +65,7 @@ export const createRegisterView = () => {
       messageContainer.innerHTML = "❌ Tu contraseña no coincide";
     }
     else {
-      createUser(email, password)
+      createUser(email, password, fullName)
       .then(()=>{
         messageContainer.removeAttribute('class', 'error');
         messageContainer.innerHTML = "✅ Gracias por registrarte";
