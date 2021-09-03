@@ -13,3 +13,6 @@ export const logOutUser = () => {
  return firebase.auth().signOut()
 };
 
+export const signInUser = (email, password) => {
+ return firebase.auth().signInWithEmailAndPassword(email, password)
+};

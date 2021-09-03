@@ -1,5 +1,7 @@
+import { signInUser } from "../index.js";
+
 export const createLogInView = () => {
-  const loginSection = document.createElement('section');
+  const loginSection = document.createElement("section");
   const loginView = `
   <div class="brand">
     <div class="young-guy">
@@ -15,9 +17,10 @@ export const createLogInView = () => {
   <div class="log-in">
     <h1>Ingresa a tu cuenta</h1>
     <form method="post">
-      <input type="email" name="email" placeholder="Correo" required>
-      <input type="password" name="password" placeholder="Contraseña" required>
-      <button type="submit">Ingresar</button>
+      <input type="email" name="email" id="emailSignIn" placeholder="Correo" required>
+      <input type="password" name="password" id="passwordSignIn" placeholder="Contraseña" required>
+      <p id="message"></p>
+      <button type="submit" id="btnSignIn">Ingresar</button>
     </form>
     <p class="or">or</p>
     <p>Ingresa con tu cuenta de Google</p>
@@ -32,5 +35,51 @@ export const createLogInView = () => {
     </div>
   </div>`;
   loginSection.innerHTML = loginView;
+
+  const emailSignIn = loginSection.querySelector("#emailSignIn");
+  const passwordSignIn = loginSection.querySelector("#passwordSignIn");
+  const btnSignIn = loginSection.querySelector("#btnSignIn");
+  const messageContainer = loginSection.querySelector('#message');
+
+  btnSignIn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = emailSignIn.value;
+    const password = passwordSignIn.value;
+
+    signInUser(email, password)
+      .then(() => {
+        window.location.hash = "#/muro";
+      })
+      .catch((error) => {
+        /* validaciones de firebase */
+        var errorCode = error.code;
+        switch (errorCode) {
+          case "auth/user-not-found":
+            messageContainer.setAttribute("class", "error");
+            messageContainer.innerHTML = "❌ Usuario no registrado";
+            break;
+
+          case "auth/wrong-password":
+            messageContainer.setAttribute("class", "error");
+            messageContainer.innerHTML = "❌ Contraseña incorrecta";
+            break;
+
+          case "auth/invalid-email":
+            messageContainer.setAttribute("class", "error");
+            messageContainer.innerHTML = "❌ Correo inválido";
+            break;
+        }
+      });
+  });
+
+  /* Quitar el mensaje de error cuando el usuario escriba */
+  const clearErrorMessage = (e) => {
+    if (e.target.tagName === "INPUT") {
+    messageContainer.innerHTML = "";
+    }
+  };
+
+  const form = loginSection.querySelector("form");
+  form.addEventListener("keyup", clearErrorMessage); 
   return loginSection;
 };
