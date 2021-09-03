@@ -33,4 +33,4 @@ export const createLogInView = () => {
   </div>`;
   loginSection.innerHTML = loginView;
   return loginSection;
-}
+};
