@@ -2,53 +2,112 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Circular-Loom', sans-serif, 'Poppins';
     box-sizing: border-box;
 }
 
-.app{
+
+.divFlex{
+
     width: 100%;
-    margin: auto;
+    height: auto;
+    position:absolute;
+    background: linear-gradient(45deg, rgb(38, 45, 145), rgb(219, 124, 243), rgb(230, 120, 47));
     /*Flex*/
     display: flex;
-    justify-content: center;
-    flex-flow: row nowrap;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    
 }
 
 
 /* div que contiene los estilos de bienvenida */
 .welcomeContainer{
-    
-    background-color: aquamarine;
+    /* border: silver solid; */
     /*Flex*/
     display: flex;
     flex-flow: wrap column;
     align-items: center;
-    padding: 30px;
-
+    padding: 10px;
+    gap: 10px;
+    margin: 15px 10px 5px;
 }
+
 
 h1{
-    background-color: rgb(147, 25, 204); 
-}
-
-.logo{
-    background-color: rgb(27, 218, 154);
+    color: darkturquoise;
+    font-size: 35px;
+    font-weight: 1000;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    text-shadow: -2px -2px 1px darkblue;
+    text-align: center;
 }
 
 h2{
-    background-color: rgb(221, 33, 190);
+   color: darkturquoise;
+   text-shadow: -2px -2px 2px darkblue;
+   font-size: 30px;
+   text-align: center;
 
 }
 
 h3{
-    background-color: rgb(12, 126, 21);
+    color: whitesmoke;
+    text-shadow: -2px -2px 2px black;
+    text-align: center; 
 }
 
 /*div que contiene los estilos del formulario*/
 .formContainer{
-    background-color: beige;
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 10px 10px 8px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    /*Flex*/
     display: flex;
     flex-flow: wrap column;
+    gap: 15px;
     align-items: center;
+}
+
+.signUp{
+    width: 100%;
+    padding: 3px 27px;
+    font-size: 15px;
+}
+
+.btnregister{
+    background-color: rgba(34, 34, 82, 0.979);
+    color: whitesmoke;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 1px 70px;
+    
+}
+
+h4{
+    color: whitesmoke;
+    text-align: center;
+}
+
+.logContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 0px 10px 50px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    gap: 1px;
+    align-items: center;
+}
+
+.linkSignUP{
+    color:darkturquoise;
+    font-size: 20px;
+    text-shadow: -2px -2px 1px darkblue;
 }
