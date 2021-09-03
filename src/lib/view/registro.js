@@ -1,4 +1,4 @@
-import { createUser } from '../api/firebaseConnection.js';
+import { createUser } from '../index.js';
 
 export const createRegisterView = () => {
   const registerSection = document.createElement("section");
@@ -68,6 +68,7 @@ export const createRegisterView = () => {
       .then(()=>{
         messageContainer.removeAttribute('class', 'error');
         messageContainer.innerHTML = "✅ Gracias por registrarte";
+        setTimeout(()=>{window.location.hash = '#/muro'; }, 2000);
       }).catch((error) => {
         /* validaciones de firebase */
         var errorCode = error.code;
@@ -102,7 +103,7 @@ export const createRegisterView = () => {
   form.addEventListener('keyup', clearErrorMessage); 
 
   return registerSection;
-}; 
+}
 
 /* npm install firebase-mock --save-dev */
 

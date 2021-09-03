@@ -1,6 +1,9 @@
-// aqui exportaras las funciones que necesites
+export const createUser = (email, password) => {
+  console.log(email, password);
+  return firebase.auth().createUserWithEmailAndPassword(email, password)
+}
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
+export const logOutUser = () => {
+ return firebase.auth().signOut()
+
+}
