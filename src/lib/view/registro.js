@@ -1,8 +1,5 @@
 import { createUser } from '../api/firebaseConnection.js';
 
-let email;
-let password;
-
 export const createRegisterView = () => {
   const registerSection = document.createElement('section');
   const registerView = `
@@ -17,8 +14,8 @@ export const createRegisterView = () => {
     <div class="log-in">
       <h1>Formulario de Registro</h1>
       <form method="post">
-        <input id="userName" type="text" name="name" placeholder="Nombre" required>
-        <input id="lastName" type="text" name="lastName" placeholder="Apellido" required>
+        <input id="userName" type="text" name="name" placeholder="Nombre" min-length="2"required>
+        <input id="lastName" type="text" name="lastName" placeholder="Apellido" min-length="2" required>
         <input id="email" type="email" name="email" placeholder="Correo" required>
         <input id="password" type="password" name="password" placeholder="Contraseña" required>
         <button id="register">Regístrate</button>
@@ -27,7 +24,7 @@ export const createRegisterView = () => {
   <p id="text-message">texto</p>
 </div>
       <div class="new-account">
-      <a href="#/ingreso">¿Ya tienes una cuenta?</a>
+        <a href="#/ingreso">¿Ya tienes una cuenta?</a>
       </div>
       <p class ="or">or</p>
       <p>Ingresa con </p>
