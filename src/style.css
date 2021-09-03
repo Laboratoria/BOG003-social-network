@@ -93,6 +93,9 @@ form button:hover {
 }
 
 /*Elementos texto*/
+#text-message {
+  color: #18a0fb;
+}
 p {
   color: var(--white-code);
 }

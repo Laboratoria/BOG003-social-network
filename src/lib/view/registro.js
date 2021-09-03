@@ -23,6 +23,9 @@ export const createRegisterView = () => {
         <input id="password" type="password" name="password" placeholder="Contraseña" required>
         <button id="register">Regístrate</button>
       </form>
+      <div id="message">
+  <p id="text-message">texto</p>
+</div>
       <div class="new-account">
       <a href="#/ingreso">¿Ya tienes una cuenta?</a>
       </div>
@@ -41,7 +44,6 @@ export const createRegisterView = () => {
   }, 1000);
   return registerSection;
 };
-
 /* const userName = document.getElementById('userName').value;
 const lastName = document.getElementById('lastName').value; */
 
