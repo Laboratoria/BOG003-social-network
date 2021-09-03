@@ -1,7 +1,7 @@
 import { createUser } from '../index.js';
 
 export const createRegisterView = () => {
-  const registerSection = document.createElement("section");
+  const registerSection = document.createElement('section');
   const registerView = `
   <div class="brand">
       <div class="logo-long">
@@ -20,7 +20,7 @@ export const createRegisterView = () => {
         <input id="password" type="password" name="password" placeholder="Contraseña" required>
         <input id="passwordTwo" type="password" name="passwordTwo" placeholder="Confirma tu contraseña" required>
         <p id="message"></p>
-        <button id="register" type="submit">Regístrate</button>
+        <button id="register" type = "submit">Regístrate</button>
       </form>
       <div class="new-account">
         <a href="#/ingreso">¿Ya tienes una cuenta?</a>
@@ -103,10 +103,9 @@ export const createRegisterView = () => {
   form.addEventListener('keyup', clearErrorMessage); 
 
   return registerSection;
-}
+};
 
 /* npm install firebase-mock --save-dev */
-
 
 //Tomar el nombre y apellido del usuario
 /* createUser(email, password)
@@ -123,3 +122,4 @@ export const createRegisterView = () => {
         });  
         messageContainer.innerHTML = "Gracias por registrarte";
       }) */
+

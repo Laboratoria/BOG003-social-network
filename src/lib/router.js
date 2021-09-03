@@ -23,5 +23,4 @@ export const changeRoute = (hash) => {
             mainSection.innerHTML = `<h2 class = "error404" >No Existe</h2>`;
 
     }
-}
-
+};

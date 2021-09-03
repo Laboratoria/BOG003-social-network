@@ -1,5 +1,5 @@
 export const createLogInView = () => {
-  const loginSection = document.createElement("section");
+  const loginSection = document.createElement('section');
   const loginView = `
   <div class="brand">
     <div class="young-guy">
