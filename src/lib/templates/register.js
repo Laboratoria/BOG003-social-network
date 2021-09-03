@@ -1,28 +1,40 @@
 export const register = () => {
     //Div contenedor de la vista div padre
     const divRegister = document.createElement('div');
+    divRegister.setAttribute("class", "divFlex");
 
     //creando tag h1 titulo
     const viewRegister = `
         <div class = "welcomeContainer">
-            <h1>OtaKuGeeK</h1>
-            <img src="IMG/SOMBRA AZUL.svg" width="100" alt="logo sin fondo" class="logo">
-            <h2>¡Bienvendos</h2>
+            <h1>OtaKuGeeK <br>オタク</h1>
+            <img src="IMG/sombra-logo.svg" width="100" alt="logo sin fondo" class="logo">
+            <h2>¡Bienvendos!</h2>
             <h3>Red social para Otakus y no tan Otakus</h3>
         </div>
     
-        <div class="formContainer">
-            <h2>Crea una cuenta</h2>
-            <h3>Es fácil, rápido y divertido!!!</h3>
-            <form id="signUp">
-                <input type="text" id="email" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
-            </form>
+        <div class="divForm">
+            <div class="formContainer">
+                <h2>Crea una cuenta</h2>
+                <h3>Es fácil, rápido y divertido!!!</h3>
+                    <form id="signUp">
+                        <input type="email" id="email" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
+                    </form>
 
-            <form id="signUp1">
-                <input type="text" id="password" class="signUp" placeholder="Ingresa tu Contraseña" required="" autocomplete="off"></input>
-            </form>
+                    <form id="signUp1">
+                        <input type="password" id="password" class="signUp" placeholder="Ingresa tu Contraseña" pattern=".{8,}" minlength="8" maxlength="32" required="" autocomplete="off"></input>
+                    </form>
 
-            <button type="submit" id="btnregister" class="btnregister" onclick="">Resgistrarte</button>
+                    <button type="submit" id="btnregister" class="btnregister" onclick="">Registrarte</button>
+
+                <h4>O registrate con...</h4>
+
+                <a href=""><img src="IMG/Icono-google.svg" width="40" alt="icono" class="iconGoogle"></a>
+            </div>
+
+            <div class="logContainer">
+                <h4>¿Ya tienes una cuenta?</h4>
+                <a href="" class="linkSignUP">Entrar</a>
+            </div>
         </div>
         `
         
