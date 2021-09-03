@@ -11,7 +11,7 @@
 
     width: 100%;
     height: auto;
-    position:absolute;
+    position: absolute;
     background: linear-gradient(45deg, rgb(38, 45, 145), rgb(219, 124, 243), rgb(230, 120, 47));
     /*Flex*/
     display: flex;
@@ -106,8 +106,17 @@ h4{
     align-items: center;
 }
 
-.linkSignUP{
+.linkLogin{
     color:darkturquoise;
     font-size: 20px;
     text-shadow: -2px -2px 1px darkblue;
+}
+
+
+/*Estilo para Desktop mediaQuery*/
+@media (min-width:768px){
+    .divFlex {
+        height: 100vh;
+        align-items: center;
+    }
 }
