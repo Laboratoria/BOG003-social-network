@@ -16,3 +16,8 @@ export const logOutUser = () => {
 export const signInUser = (email, password) => {
  return firebase.auth().signInWithEmailAndPassword(email, password)
 };
+
+export const signInWithGoogle = () => {
+ var provider = new firebase.auth.GoogleAuthProvider();
+ return firebase.auth().signInWithPopup(provider)
+}

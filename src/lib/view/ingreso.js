@@ -1,4 +1,5 @@
 import { signInUser } from "../index.js";
+import { signInWithGoogle } from "../index.js";
 
 export const createLogInView = () => {
   const loginSection = document.createElement("section");
@@ -24,11 +25,9 @@ export const createLogInView = () => {
     </form>
     <p class="or">or</p>
     <p>Ingresa con tu cuenta de Google</p>
-    <div class="Google-login">
-      <a href="/">
+    <button type="button" class="Google-login">
         <img src="images/google.png" alt="Log in with Google">
-      </a>
-    </div>
+    </button>
     <p>¿No tienes una cuenta?</p>
     <div class="new-account">
       <a href="#/registro">Crea una cuenta AQUI</a>
@@ -81,5 +80,18 @@ export const createLogInView = () => {
 
   const form = loginSection.querySelector("form");
   form.addEventListener("keyup", clearErrorMessage); 
+
+  const btnGoogle = loginSection.querySelector(".Google-login");
+
+  btnGoogle.addEventListener("click",(e) => {
+    e.preventDefault();
+    signInWithGoogle()
+    .then(() => {
+      window.location.hash = "#/muro";
+    }).catch ((error) => {
+      console.log(error.message);
+    })
+  })
   return loginSection;
 };
+

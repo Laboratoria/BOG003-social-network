@@ -1,4 +1,5 @@
 import { createUser } from '../index.js';
+import { signInWithGoogle } from '../index.js';
 
 export const createRegisterView = () => {
   const registerSection = document.createElement('section');
@@ -27,11 +28,9 @@ export const createRegisterView = () => {
       </div>
       <p class ="or">or</p>
       <p>Ingresa con </p>
-      <div class="Google-login">
-        <a href="/">
+      <button type="button" class="Google-login">
           <img src="images/google.png" alt="Log in with Google">
-        </a>
-      </div>    
+      </button>    
   </div>`;
   registerSection.innerHTML = registerView;
 
@@ -103,24 +102,20 @@ export const createRegisterView = () => {
   const form = registerSection.querySelector('form');
   form.addEventListener('keyup', clearErrorMessage); 
 
+  const btnGoogle = registerSection.querySelector(".Google-login");
+
+  btnGoogle.addEventListener("click",(e) => {
+    e.preventDefault();
+    signInWithGoogle()
+    .then(() => {
+      window.location.hash = "#/muro";
+    }).catch ((error) => {
+      console.log(error.message);
+    })
+  })
+
   return registerSection;
 };
 
 /* npm install firebase-mock --save-dev */
-
-//Tomar el nombre y apellido del usuario
-/* createUser(email, password)
-      .then((userCredential)=>{
-        const user = firebase.auth().currentUser;
-        user.updateProfile({
-          displayName: "Jane Q. User"    
-        }).then(() => {
-          console.log(user);
-          // ...
-        }).catch((error) => {
-          // en la otra vista verificar si existe o noy
-          // ...
-        });  
-        messageContainer.innerHTML = "Gracias por registrarte";
-      }) */
 
