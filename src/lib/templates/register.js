@@ -33,7 +33,7 @@ export const register = () => {
 
             <div class="logContainer">
                 <h4>¿Ya tienes una cuenta?</h4>
-                <a href="" class="linkSignUP">Entrar</a>
+                <a href="#/login" class="linkLogin">Entrar</a>
             </div>
         </div>
         `
