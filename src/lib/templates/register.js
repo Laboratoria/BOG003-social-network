@@ -1,3 +1,5 @@
+/* import { login } from "./login"; */
+
 export const register = () => {
     //Div contenedor de la vista div padre
     const divRegister = document.createElement('div');
@@ -33,7 +35,7 @@ export const register = () => {
 
             <div class="logContainer">
                 <h4>¿Ya tienes una cuenta?</h4>
-                <a href="#/login" class="linkLogin">Entrar</a>
+                <a href="#/login" class="linkLogin">Inicia Sesión</a>
             </div>
         </div>
         `
@@ -47,3 +49,9 @@ export const register = () => {
     
 }
 
+
+//Funcionalidad btnregister
+/* const registerBtn = document.getElementById("btnregister");
+    registerBtn.addEventListener("click", () => {
+    window.location.hash = ""
+}); */
