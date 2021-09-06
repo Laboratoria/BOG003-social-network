@@ -24,6 +24,9 @@ const showTemplate = (hash) => {
         case "#/login":
             containerAPP.appendChild(login());
             break;
+        case "#/profile":
+            containerAPP.appendChild(profile());
+            break;
         default:
             containerAPP.innerHTML= `<h2>Página no encontrada</h2>`
     }

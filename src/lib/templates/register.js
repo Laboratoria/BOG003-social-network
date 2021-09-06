@@ -5,7 +5,7 @@ export const register = () => {
     const divRegister = document.createElement('div');
     divRegister.setAttribute("class", "divFlex");
 
-    //creando tag h1 titulo
+    //creando esquema HTML
     const viewRegister = `
         <div class = "welcomeContainer">
             <h1>OtaKuGeeK <br>オタク</h1>
@@ -43,15 +43,21 @@ export const register = () => {
     //Mostrar en pantalla tag h1    
     divRegister.innerHTML = viewRegister;
 
-    
 
     return divRegister;
     
 }
 
 
+
 //Funcionalidad btnregister
-/* const registerBtn = document.getElementById("btnregister");
+export const btnRegister = () => {
+    const registerBtn = document.getElementById("btnregister");   
     registerBtn.addEventListener("click", () => {
-    window.location.hash = ""
-}); */
+        let emailReg = document.getElementById("email").value;
+        let passwordReg = document.getElementById("password").value;
+
+        console.log("email="+emailReg+" password="+passwordReg);
+    });
+    return registerBtn;
+}
