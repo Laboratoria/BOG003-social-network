@@ -1,42 +1,42 @@
 :root {
-  --black-code: #292828;
+  --black-code: #333;
   --violet-code: #8803d2;
   --white-code: #ffffff;
   --blue-code: #a54bd7;
 }
+
 body {
   margin: 0;
   padding: 0;
   background-color: var(--black-code);
   font-family: "Roboto", sans-serif;
 }
-main #main-section {
-  min-height: 100vh;
-}
+
 section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-items: center;
-  padding: 15px;
+  padding: 2rem 2rem;
 }
-/*Imagenes*/
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Imágenes*/
 .old-man {
   display: none;
 }
-.young-guy {
-  text-align: center;
-}
+
 .young-guy img {
-  width: 200px;
-  margin: 5% 5% 5% 5%;
+  width: 180px;
 }
-.logo-long {
-  text-align: center;
-}
+
 .logo-long img {
-  width: 150px;
+  width: 180px;
 }
 
 .Google-login img {
@@ -46,36 +46,56 @@ section {
   display: block;
 }
 
+.Google-login {
+  background-color: var(--black-code);
+  border: none;
+  cursor: pointer;
+  align-self: center;
+}
+
 /*Formularios*/
 
 .log-in {
-  border: 2px solid var(--violet-code);
-  padding: 1rem;
-  margin: 2% 2% 2% 4%;
+  border: 1px solid var(--violet-code);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
+
 .log-in h1 {
+  color: var(--white-code);
+  margin: 0;
+  margin-bottom: 2.5rem;
   text-align: center;
-  color: var(--white-code);
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form input {
-  width: 100%;
-  height: 30px;
-  margin-bottom: 1rem;
-  border: 2px solid var(--violet-code);
+  display: block;
+  width: 80%;
+  margin-bottom:  1rem;
+  padding: 0.5rem 1rem;
   color: var(--white-code);
+  border: 2px solid var(--violet-code);
   background-color: var(--black-code);
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.5s;
-  align-content: center;
 }
+
 form input:focus-visible {
   outline: var(--violet-code);
   box-shadow: 2px 2px 2px 0px var(--violet-code);
 }
+
 form button {
   background-color: var(--violet-code);
   color: var(--white-code);
-  margin: 0 auto;
+  margin-bottom: 2rem;
   display: block;
   width: 150px;
   height: 40px;
@@ -97,16 +117,23 @@ form button:hover {
 #text-message {
   color: #18a0fb;
 }
+
 p {
   color: var(--white-code);
+  margin: 0;
 }
 
 .log-in p {
   text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 p.or {
   position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 p.or::after {
@@ -127,30 +154,25 @@ p.or::before {
   right: 0;
 }
 
-p.with {
-  text-align: center;
-}
-
 .error404 {
   color: #fff;
 }
 
 .new-account a {
   color: #18a0fb;
-  text-align: center;
   display: block;
-  padding: 2rem;
   text-decoration: none;
+  text-align: center;
 }
 
 #message {
   margin: 0;
   margin-bottom: 1rem;
-  color: #40A557;
+  color: #40a557;
   font-weight: bold;
   font-size: 20px;
 }
 
 #message.error {
-  color: #FC1717;
+  color: #fc1717;
 }
