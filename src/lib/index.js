@@ -20,4 +20,4 @@ export const signInUser = (email, password) => {
 export const signInWithGoogle = () => {
  var provider = new firebase.auth.GoogleAuthProvider();
  return firebase.auth().signInWithPopup(provider)
-}
+};
