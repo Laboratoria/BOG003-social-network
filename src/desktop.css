@@ -1,36 +1,29 @@
-@media(min-width:768px) {
-    .old-man{
-        display: block;
-        margin: 2% 2% 2% 2%;
-        padding: 10px;
-        left: -10%;
-        position: relative;
-    }
-    .young-guy{
-        display: none;
-    }
+@media (min-width: 768px) {
+  .old-man {
+    display: block;
+  }
 
-    section {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        padding: 15px;
-    }
+  .old-man img {
+    height: 500px;
+  }
 
-    .log-in{
-        
-        margin: 10% 2% 10% 2%;
-        right: 8%;
-        padding-top: 20px;
+  .young-guy {
+    display: none;
+  }
 
-    }
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 4rem;
+  }
 
-    .logo-long img {
-        width: 250px;
-        padding: 5px;
-      }
+  .log-in {
+    padding: 2.5rem 2rem;
+    width: 30%;
+  }
 
-
+  .logo-long img {
+    width: 250px;
+  }
 }

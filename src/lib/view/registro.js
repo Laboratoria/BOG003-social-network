@@ -117,5 +117,3 @@ export const createRegisterView = () => {
   return registerSection;
 };
 
-/* npm install firebase-mock --save-dev */
-
