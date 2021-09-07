@@ -1,6 +1,11 @@
+
+export const createUserFirebase = (email, password) => {
+  const createUserFirebase = firebase.auth().createUserWithEmailAndPassword(email, password);
+  return createUserFirebase;
+}
+
 export const createUser = (email, password, userName) => {
-  console.log(userName);
-  const createUserFirebase = firebase.auth().createUserWithEmailAndPassword(email, password)
+  const createUserFirebase = createUserFirebase(email,password)
   .then((userCredential) => {
     userCredential.user.updateProfile({ 
      displayName: userName,
