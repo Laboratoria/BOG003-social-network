@@ -15,15 +15,13 @@ export const login = () => {
         <div class="divForm">
             <div class="formContainer">
                 <h2>Inicia Sesión</h2>
-                    <form id="logUp">
-                        <input type="email" id="emailog" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
-                    </form>
+                    
+                <input type="email" id="emailog" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
+                
+                <input type="password" id="passwordlog" class="signUp" placeholder="Ingresa tu Contraseña" pattern=".{8,}" minlength="8" maxlength="32" required="" autocomplete="off"></input>
+            
 
-                    <form id="logUp1">
-                        <input type="password" id="passwordlog" class="signUp" placeholder="Ingresa tu Contraseña" pattern=".{8,}" minlength="8" maxlength="32" required="" autocomplete="off"></input>
-                    </form>
-
-                    <button type="submit" id="btnLogin" class="btnregister" onclick="">Iniciar Sesión</button>
+                <button type="submit" id="btnLogin" class="btnregister" onclick="">Iniciar Sesión</button>
 
                 <h4>O inicia sesión con...</h4>
 
@@ -35,7 +33,7 @@ export const login = () => {
                 <a href="#/register" class="linkLogin">Registrate</a>
             </div>
         </div>
-        `
+        `;
         
     //Mostrar en pantalla tag h1    
     divLogin.innerHTML = viewLogin;
