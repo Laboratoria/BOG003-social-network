@@ -1,4 +1,8 @@
 /* import { login } from "./login"; */
+//Importar función regGoogle y regEmail fromm auth.js
+import { regGoogle, regEmail } from '../firebase/auth.js';
+
+
 
 export const register = () => {
     //Div contenedor de la vista div padre
@@ -18,15 +22,12 @@ export const register = () => {
             <div class="formContainer">
                 <h2>Crea una cuenta</h2>
                 <h3>Es fácil, rápido y divertido!!!</h3>
-                    <form id="signUp">
-                        <input type="email" id="email" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
-                    </form>
-
-                    <form id="signUp1">
-                        <input type="password" id="password" class="signUp" placeholder="Ingresa tu Contraseña" pattern=".{8,}" minlength="8" maxlength="32" required="" autocomplete="off"></input>
-                    </form>
-
-                    <button type="submit" id="btnregister" class="btnregister" onclick="">Registrarte</button>
+                    
+                <input type="email" id="email" class="signUp" placeholder="Ingresa tu Email" required="" autocomplete="off"></input>
+                
+                <input type="password" id="password" class="signUp" placeholder="Ingresa tu Contraseña" pattern=".{8,}" minlength="8" maxlength="32" required="" autocomplete="off"></input>
+            
+                <button type="button" id="btnregister" class="btnregister">Registrarte</button>
 
                 <h4>O registrate con...</h4>
 
@@ -40,24 +41,28 @@ export const register = () => {
         </div>
         `
         
-    //Mostrar en pantalla tag h1    
-    divRegister.innerHTML = viewRegister;
+        //Mostrar en pantalla tag h1    
+        divRegister.innerHTML = viewRegister;
+
+        /* Aquí se le agrega el evento click al botón register, se capturan los valores de los inputs
+        y se hacen las validaciones respectivas (capturar errores) */
+        const btnRegister = divRegister.querySelector('#btnregister');
+        btnRegister.addEventListener('click', () => {
+            const email = divRegister.querySelector('#email').value;
+            const password = divRegister.querySelector('#password').value;
+            console.log("email="+email+" password="+password);
+            regEmail(email, password);
+        });
+
+        //Funcionalidad registro con GOOGLE
+        const btnGoogleRegister = divRegister.querySelector('.iconGoogle');
+        btnGoogleRegister.addEventListener("click", (e) => {
+            e.preventDefault()
+            regGoogle();
+        });
 
 
     return divRegister;
     
 }
 
-
-
-//Funcionalidad btnregister
-export const btnRegister = () => {
-    const registerBtn = document.getElementById("btnregister");   
-    registerBtn.addEventListener("click", () => {
-        let emailReg = document.getElementById("email").value;
-        let passwordReg = document.getElementById("password").value;
-
-        console.log("email="+emailReg+" password="+passwordReg);
-    });
-    return registerBtn;
-}
