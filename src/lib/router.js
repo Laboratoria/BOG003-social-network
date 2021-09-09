@@ -1,32 +1,26 @@
-import { createLogInView } from './view/ingreso.js'; 
-import { createRegisterView } from './view/registro.js'; 
+import { createLogInView } from './view/ingreso.js';
+import { createRegisterView } from './view/registro.js';
+import { createTimeLineView } from './view/muro.js';
 
 export const changeRoute = (hash) => {
-    if(hash === '#/ingreso'){
-        return showView(hash)
-    } else if(hash === '#/registro'){
-        return showView(hash)
-    } else{
-        return showView(hash)
-    }
-}
-
-const showView = (hash) => {
     const mainSection = document.getElementById('main-section');
     mainSection.innerHTML = '';
 
-    switch(hash){
-        /* case '#/':
-            mainSection.innerHTML = createLogInView();
-            break; */
+    switch (hash) {
+        case '':
+            mainSection.appendChild(createLogInView());
+            break;
         case '#/ingreso':
             mainSection.appendChild(createLogInView());
             break;
         case '#/registro':
             mainSection.appendChild(createRegisterView());
             break;
+        case '#/muro':
+            mainSection.appendChild(createTimeLineView());
+            break;    
         default:
-            mainSection.innerHTML = `<h2>No Existe</h2>`;           
+            mainSection.innerHTML = `<h2 class = "error404" >No Existe</h2>`;
 
-    }    
-}
+    }
+};
