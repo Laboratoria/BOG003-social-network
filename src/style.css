@@ -176,3 +176,9 @@ p.or::before {
 #message.error {
   color: #fc1717;
 }
+
+/*Estilos Muro*/
+
+#logOut img {
+  width: 50px;
+}
