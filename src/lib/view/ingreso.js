@@ -1,5 +1,4 @@
-import { signInUser } from "../index.js";
-import { signInWithGoogle } from "../index.js";
+import { signInUser, signInWithGoogle } from "../index.js";
 
 export const createLogInView = () => {
   const loginSection = document.createElement("section");

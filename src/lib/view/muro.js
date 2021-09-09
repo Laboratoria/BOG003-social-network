@@ -20,5 +20,4 @@ export const createTimeLineView = () => {
   })
 
   return timeLineSection;
-}
-
+};

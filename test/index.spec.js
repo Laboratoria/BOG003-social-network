@@ -1,5 +1,4 @@
-// importamos la funcion que vamos a testear
-import { createUserFirebase,signInUser, logOutUser, signInWithGoogle } from '../src/lib/index.js';
+import { signInUser, logOutUser, signInWithGoogle } from '../src/lib/index.js';
 
 
 const firebasemock = require('firebase-mock');
@@ -11,15 +10,6 @@ const mocksdk = new firebasemock.MockFirebaseSdk(
 );
 global.firebase = mocksdk;
 mocksdk.auth().autoFlush();
-
-describe('createUserFirebase', () => {
-  it('deberia crear un nuevo usuario con correo y contraseña', () => {
-    return createUserFirebase("karenp@gmail.com", "1234567")
-    .then((user) => {
-    expect(user.email).toBe("karenp@gmail.com");  
-    })
-  });
-});
 
 describe('signInUser', () => {
   it('deberia permitir iniciar sesión con correo y contraseña', () => {
@@ -48,6 +38,3 @@ describe('signInWithGoogle', () => {
     })
   });
 });
-
-
-// npm install firebase-mock --save-dev
