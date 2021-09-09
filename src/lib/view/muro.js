@@ -18,10 +18,25 @@ export const createTimeLineView = () => {
   timeLineSection.innerHTML = timeLineView;
   const logOut = timeLineSection.querySelector('#logOut');
 
-  const user = firebase.auth().currentUser;
-  console.log(user);
-    const pruebaName = timeLineSection.querySelector('#prueba');
-    pruebaName.innerHTML = `publicado por ${user.displayName}`;
+  // const user = firebase.auth().currentUser;
+  // console.log(user);
+
+  
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log('Estoy logueado')
+        const pruebaName = timeLineSection.querySelector('#prueba');
+        pruebaName.innerHTML = `publicado por ${user.displayName}`;
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+       // var uid = user.uid;
+        // ...
+      } else {
+        console.log('User is signed out');
+        // ...
+      }
+    });
 
   logOut.addEventListener('click', (e) => {
     e.preventDefault();
