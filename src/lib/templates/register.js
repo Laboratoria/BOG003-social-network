@@ -67,22 +67,22 @@ export const register = () => {
           return emailVerification();
         })
         .then(() => {
-          divRegister.querySelector('#errorMessage').innerHTML = 'Usuario Creado, verifica tu correo electronico para verificar la cuenta';
+          divRegister.querySelector('#errorMessage').innerHTML = '✅🐱‍💻💌Usuario creado exitosamente, verifica la bandeja de entrada de tu correo';
         })
         .catch((error) => {
           const errorCode = error.code;
           switch (errorCode) {
             case 'auth/invalid-email':
-              errorMessage.innerHTML = 'Por favor ingrese un correo valido';
+              errorMessage.innerHTML = '❎❌Por favor ingrese un correo valido';
               break;
             case 'auth/email-already-in-use':
-              errorMessage.innerHTML = 'Ya existe un usuario con este correo';
+              errorMessage.innerHTML = '❎❌Ya existe un usuario con este correo';
               break;
             case 'auth/weak-password':
-              errorMessage.innerHTML = 'La contraseña debe tener minimo seis digitos';
+              errorMessage.innerHTML = '❎❌La contraseña debe tener minimo 6 digitos';
               break;
             default:
-              errorMessage.innerHTML = 'Ha ocurrido un error inesperado';
+              errorMessage.innerHTML = '❎❌Ha ocurrido un error inesperado';
               break;
           }
         });

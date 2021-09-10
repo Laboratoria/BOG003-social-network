@@ -63,12 +63,12 @@ h3{
     border-radius: 15px;
     border: darkblue 2px solid;
     padding: 10px 30px;
-    margin: 10px 10px 8px;
+    margin: 10px 10px 10px 8px;
     box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
     /*Flex*/
     display: flex;
     flex-flow: wrap column;
-    gap: 15px;
+    gap: 7px;
     align-items: center;
 }
 
@@ -76,6 +76,13 @@ h3{
     width: 100%;
     padding: 3px 27px;
     font-size: 15px;
+}
+
+.errorMessage{
+    color: darkturquoise;
+    font-size: 15px;
+    font-weight: bold;
+
 }
 
 .btnregister{
@@ -96,13 +103,12 @@ h4{
     background-color:rebeccapurple;
     border-radius: 15px;
     border: darkblue 2px solid;
-    padding: 10px 30px;
-    margin: 0px 10px 50px;
+    margin: 0px 10px 20px;
     box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
     /*Flex*/
     display: flex;
     flex-flow: wrap column;
-    gap: 1px;
+    gap: 2px;
     align-items: center;
 }
 
