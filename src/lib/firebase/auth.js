@@ -8,8 +8,11 @@ export const emailVerification = () => firebase
   .auth()
   .currentUser.sendEmailVerification();
 
+export const signIn = (email, password) => firebase.auth()
+  .signInWithEmailAndPassword(email, password);
+
 // Crear funcion para autenticar con google
-export const regGoogle = () => {
+export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
   return firebase

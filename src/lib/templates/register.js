@@ -1,6 +1,6 @@
 /* import { login } from './login'; */
 // Importar función regGoogle y regEmail fromm auth.js
-import { regGoogle, createUser, emailVerification } from '../firebase/auth.js';
+import { createUser, emailVerification } from '../firebase/auth.js';
 
 export const register = () => {
   //  Div contenedor de la vista div padre
@@ -31,9 +31,6 @@ export const register = () => {
 
                 <span id='errorMessage' class='errorMessage'></span>
 
-                <h4>O registrate con...</h4>
-
-                <a href=''><img src='IMG/Icono-google.svg' width='40' alt='icono' class='iconGoogle'></a>
             </div>
 
             <div class='logContainer'>
@@ -90,30 +87,5 @@ export const register = () => {
       errorMessage.innerHTML = 'Las contraseñas no coinciden';
     }
   });
-
-  /*
-  xport const regEmail = () => {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      var user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ..
-    });
-}; */
-
-  // Funcionalidad registro con GOOGLE
-  const btnGoogleRegister = divRegister.querySelector('.iconGoogle');
-  btnGoogleRegister.addEventListener('click', (e) => {
-    e.preventDefault();
-    regGoogle();
-  });
-
   return divRegister;
 };
