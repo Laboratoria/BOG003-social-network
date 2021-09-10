@@ -67,7 +67,7 @@ export const register = () => {
           return emailVerification();
         })
         .then(() => {
-          divRegister.querySelector('#errorMessage').innerHTML = '✅🐱‍💻💌Usuario creado exitosamente, verifica la bandeja de entrada de tu correo';
+          divRegister.querySelector('#errorMessage').innerHTML = '✅🐱‍💻💌Usuario creado exitosamente, verifica la bandeja de entrada de tu correo y luego <a href="#/login">Inicia sesión</a>';
         })
         .catch((error) => {
           const errorCode = error.code;
