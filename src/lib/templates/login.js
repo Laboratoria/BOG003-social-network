@@ -1,3 +1,5 @@
+import { loginGoogle, signIn } from '../firebase/auth.js';
+
 export const login = () => {
   // div contenedor de la vista div padre
   const divLogin = document.createElement('div');
@@ -16,9 +18,9 @@ export const login = () => {
             <div class='formContainer'>
                 <h2>Inicia Sesión</h2>
                     
-                <input type='email' id='emailog' class='signUp' placeholder='Ingresa tu Email' required='' autocomplete='off'></input>
+                <input type='email' id='emailogin' class='signUp' placeholder='Ingresa tu Email' required='' autocomplete='off'></input>
                 
-                <input type='password' id='passwordlog' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
+                <input type='password' id='passwordlogin' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
             
 
                 <button type='submit' id='btnLogin' class='btnregister' onclick=''>Iniciar Sesión</button>
@@ -37,6 +39,48 @@ export const login = () => {
 
   // Mostrar en pantalla tag h1
   divLogin.innerHTML = viewLogin;
+
+  // Funcionalidad Login con email y password
+  const btnLogin = divLogin.querySelector('#btnLogin');
+  btnLogin.addEventListener('click', () => {
+    const email = divLogin.querySelector('#emailogin').value;
+    const password = divLogin.querySelector('#passwordlogin').value;
+    const errorMessage = divLogin.querySelector('#errorMessage');
+
+    signIn(email, password).then(() => {
+      setTimeout(() => {
+        if (!emailVerified) {
+          errorMessage.innerHTML = '⚠️ Debe validar su correo para iniciar sesión';
+        } else {
+          window.location.hash = '#/profile';
+        }
+      }, 1000);
+    })
+      .catch((error) => {
+        const errorCode = error.code;
+        switch (errorCode) {
+          case 'auth/invalid-email':
+            errorMessage.innerHTML = '❎❌Por favor ingrese un correo valido';
+            break;
+          case 'auth/wrong-password':
+            errorMessage.innerHTML = '❎❌La contraseña es incorrecta';
+            break;
+          case 'auth/user-not-found':
+            errorMessage.innerHTML = '❎❌El usuario no se encuentra registrado';
+            break;
+          default:
+            errorMessage.innerHTML = '❎❌Ha ocurrido un error inesperado';
+            break;
+        }
+      });
+  });
+
+  // Funcionalidad Login con GOOGLE
+  const btnGoogleRegister = divLogin.querySelector('.iconGoogle');
+  btnGoogleRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginGoogle();
+  });
 
   return divLogin;
 };
