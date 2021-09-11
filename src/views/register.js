@@ -2,17 +2,8 @@
 export const registerUser = (email, password) => {
   /*  const email = "test@example.com";
    const password = "hunter2"; */
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorMessage);
-    });
+   return firebase.auth().createUserWithEmailAndPassword(email, password);
+  
 }
 
 
@@ -34,6 +25,8 @@ export const registerView = `
       <span class="title-2">cuenta</span>
     </div>
 
+    <p id="register-error"></p>
+
     <form class="form-register">
       <div class="input-icono">
         <input id="email" type="text" placeholder="Correo electronico">
@@ -45,10 +38,6 @@ export const registerView = `
         <img class="" src="../img/password-icon.svg" alt="">
       </div>
       
-      <div class="input-icono">
-        <input id="confirm-password" type="password" placeholder="Confirmar Contraseña">
-        <img class="" src="../img/password-icon.svg" alt="">
-      </div>
 
       <button id="register">Registrate</button>
     </form>

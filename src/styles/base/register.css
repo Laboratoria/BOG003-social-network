@@ -32,6 +32,7 @@
   align-items: center;
 }
 
+
 .register-section .register__body .titles {
   display: flex;
   flex-direction: column;
@@ -44,6 +45,12 @@
   letter-spacing: 0.03em;
   color: #032c3d;
   margin-bottom: 41px;
+}
+
+.register-section .register__body .error {
+    font-size: 16px;
+    color: red;
+    margin-bottom: 30px; 
 }
 
 .register-section .register__body .titles .title-2 {
@@ -79,7 +86,7 @@
   border: 1px solid #7bbdc3;
   box-sizing: border-box;
   border-radius: 14px;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .register-section .register__body .form-register .input-icono input::placeholder { 

@@ -5,8 +5,6 @@ let content = document.getElementById('root');
 const router = (route) => {
 content.innerHTML = "";
    switch(route) {
-
-    
     case '#/': 
         return content.appendChild(Home());
      
@@ -19,9 +17,7 @@ content.innerHTML = "";
     case '#/register':
         return content.appendChild(Register());
     default:
-        return console.log("404!!!");
-
-    
+        
    }
 };
 
