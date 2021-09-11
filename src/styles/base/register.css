@@ -1,0 +1,103 @@
+.register-section {
+  padding: 17px 0;
+  background-image: url("../../img/background-register.svg"); /* The image used */
+  height: 100vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the backgroun*/
+}
+
+.register-section .register__header {
+  margin-bottom: 64px;
+}
+.register-section .register__header .icono-casa {
+  margin-left: 56px;
+}
+
+.register-section .register__header .barra {
+  height: 20px;
+  width: 100%;
+  background: #032c3d;
+}
+
+.register-section .register__header .logo {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.register-section .register__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-section .register__body .titles {
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 53px;
+  line-height: 98.3%;
+  letter-spacing: 0.03em;
+  color: #032c3d;
+  margin-bottom: 41px;
+}
+
+.register-section .register__body .titles .title-2 {
+  margin-left: 40px;
+}
+
+.register-section .register__body .form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+
+.register-section .register__body .form-register .input-icono {
+  position: relative;
+}
+
+.register-section .register__body .form-register .input-icono img {
+  position: absolute;
+  left: 15px;
+  top: 1;
+  bottom: 1;
+  top: 11px;
+}
+
+.register-section .register__body .form-register .input-icono input {
+  width: 292px;
+  height: 47px;
+  text-align: center;
+  background: #f7f8f4;
+  border: 1px solid #7bbdc3;
+  box-sizing: border-box;
+  border-radius: 14px;
+  font-size: 19px;
+}
+
+.register-section .register__body .form-register .input-icono input::placeholder { 
+    color: rgba(3, 44, 61, 0.6); 
+}
+
+.register-section .register__body .form-register button {
+  width: 292px;
+  height: 71px;
+  background: #032c3d;
+  opacity: 0.93;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+a {
+  font-size: 12px;
+  text-decoration: none;
+}

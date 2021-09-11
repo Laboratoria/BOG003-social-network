@@ -1,43 +1,11 @@
+@import url(./base/register.css);
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
 }
 
-body {
-  background: rgb(175, 171, 171);
-  color: white;
-}
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-nav {
-  float: left;
-}
-
-nav ul {
-  padding: 25px 40px;
-  display: flex;
-  background: #434445;
-}
-
-nav ul a {
-  text-decoration: none;
-  color: #fff;
-  padding: 30px;
-}
-
-nav li {
-  list-style: none;
-}
-ul a {
-  text-decoration: none;
-  color: black;
-  padding: 30px;
-}
-
-nav li {
-  list-style: none;
-}

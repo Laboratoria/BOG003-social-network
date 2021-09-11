@@ -15,7 +15,8 @@ if (enviar) {
     e.preventDefault();
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
+    const confirmPassword = document.querySelector("#confirm-password").value;
   
-    registerUser(email, password);
+    registerUser(email, password, confirmPassword);
   })
 }
