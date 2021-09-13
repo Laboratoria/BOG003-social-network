@@ -47,9 +47,11 @@ export const login = () => {
     const password = divLogin.querySelector('#passwordlogin').value;
     const errorMessage = divLogin.querySelector('#errorMessage');
 
-    signIn(email, password).then(() => {
+    signIn(email, password).then((res) => {
+      // Entro al objeto y coloco el usuario
+      // console.log(res.user.emailVerified);
       setTimeout(() => {
-        if (!emailVerified) {
+        if (res.user.emailVerified === false) {
           errorMessage.innerHTML = '⚠️ Debe validar su correo para iniciar sesión';
         } else {
           window.location.hash = '#/profile';

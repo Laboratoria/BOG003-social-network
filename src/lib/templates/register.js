@@ -53,7 +53,8 @@ export const register = () => {
     const errorMessage = divRegister.querySelector('#errorMessage');
     console.log('email=', email, ' password=', password, confirmPassword);
 
-    if ((password === confirmPassword) !== '') {
+    if (password === confirmPassword && confirmPassword !== '') {
+      console.log('entro');
       //  Traer la variable createUser para registrase en la app con usuario y contraseña
       createUser(email, password)
         .then(() => {
