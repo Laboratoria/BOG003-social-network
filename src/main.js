@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 import { router } from './router/index.routes.js';
-import { registerUser } from './views/register.js';
+import { registerUser, emailVerification } from './views/register.js';
 
 
 router(window.location.hash);
@@ -25,20 +25,16 @@ if (enviar) {
         const user = userCredential.user;
         user.updateProfile({
           displayName: userName,
-        }).then((userUpdated) => {
-          console.log(userUpdated);
-        })
-          .catch((error) => {
-            console.log(error);
-          });
-        console.log(user);
-
+        }) 
+        
         email.value = "";
         password.value = "";
         userName.value = "";
 
         const loginRoute = `${window.location.origin}/#/login`;
+        emailVerification();
         window.location.replace(loginRoute);
+        
       })
       .catch((error) => {
         const errorCode = error.code;

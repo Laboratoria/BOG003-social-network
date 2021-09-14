@@ -3,6 +3,9 @@ export const registerUser = (email, password) => {
    return firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
+export const emailVerification = () => {
+  firebase.auth().currentUser.sendEmailVerification();
+}
 
 
 export const registerView = `
@@ -37,6 +40,11 @@ export const registerView = `
 
       <div class="input-icono">
         <input id="password" type="password" placeholder="Contraseña">
+        <img class="" src="../img/password-icon.svg" alt="">
+      </div>
+
+      <div class="input-icono">
+        <input id="confirm-password" type="password" placeholder="Confirmar contraseña">
         <img class="" src="../img/password-icon.svg" alt="">
       </div>
       
