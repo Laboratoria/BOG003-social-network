@@ -13,18 +13,30 @@ const enviar = document.querySelector('#register');
 if (enviar) {
   enviar.addEventListener('click', async (e) => {
     e.preventDefault();
+    let userName = document.querySelector('#user-name');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
     const registerError = document.querySelector('#register-error');
 
 
-    registerUser(email.value, password.value)
+    registerUser(email.value, password.value, userName.value)
       .then((userCredential) => {
-        // Signed in 
+        // Signed in
         const user = userCredential.user;
+        user.updateProfile({
+          displayName: userName,
+        }).then((userUpdated) => {
+          console.log(userUpdated);
+        })
+          .catch((error) => {
+            console.log(error);
+          });
         console.log(user);
+
         email.value = "";
         password.value = "";
+        userName.value = "";
+
         const loginRoute = `${window.location.origin}/#/login`;
         window.location.replace(loginRoute);
       })
@@ -32,7 +44,7 @@ if (enviar) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        
+
         switch (errorCode) {
           case 'auth/email-already-in-use':
             registerError.classList.add('error');
@@ -51,8 +63,10 @@ if (enviar) {
             break;
         }
 
+
         email.value = "";
         password.value = "";
+        userName.value = "";
 
       });
   });
