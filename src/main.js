@@ -18,6 +18,16 @@ const init = () => {
     console.log(window.location.hash);
     showTemplate(window.location.hash);
   });
+
+  // Corrección del enrutamiento pagina inicio
+  const entries = performance.getEntriesByType('navigation');
+
+  if (entries.map((nav) => nav.type) === 'reload') {
+    console.info('This page is reloaded');
+    showTemplate(window.location.hash);
+  } else {
+    console.info('This page is not reloaded');
+  }
 };
 // Llamar a la función init una vez se cargue la página
 window.addEventListener('load', init);

@@ -12,7 +12,7 @@ export const register = () => {
         <div class = 'welcomeContainer'>
             <h1>OtaKuGeeK <br>オタク</h1>
             <img src='IMG/sombra-logo.svg' width='100' alt='logo sin fondo' class='logo'>
-            <h2>¡Bienvendos!</h2>
+            <h2>¡Bienvenidos!</h2>
             <h3>Red social para Otakus y no tan Otakus</h3>
         </div>
     
