@@ -22,8 +22,9 @@ export const login = () => {
                 
                 <input type='password' id='passwordlogin' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
             
-
                 <button type='submit' id='btnLogin' class='btnregister' onclick=''>Iniciar Sesión</button>
+
+                <span id='errorMessage' class='errorMessage'></span>
 
                 <h4>O inicia sesión con...</h4>
 
@@ -54,7 +55,7 @@ export const login = () => {
         if (res.user.emailVerified === false) {
           errorMessage.innerHTML = '⚠️ Debe validar su correo para iniciar sesión';
         } else {
-          window.location.hash = '#/profile';
+          window.location.hash = '#/post';
         }
       }, 1000);
     })
