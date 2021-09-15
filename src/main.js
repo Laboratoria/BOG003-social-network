@@ -1,6 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 import { router } from './router/index.routes.js';
 import { registerUser } from './views/register.js';
+import { loginUser } from './views/login.js';
 
 
 router(window.location.hash);
@@ -53,6 +54,63 @@ if (enviar) {
 
         email.value = "";
         password.value = "";
+
+      });
+  });
+}
+
+
+
+router(window.location.hash);
+
+window.addEventListener('hashchange', () => {
+  router(window.location.hash);
+});
+
+const ingresar = document.querySelector('#ingresar');
+if (ingresar) {
+  ingresar.addEventListener('click', async (e) => {
+    e.preventDefault();
+    let emailLogin = document.querySelector('#email');
+    let passwordLogin = document.querySelector('#password');
+    const loginError = document.querySelector('#login-error');
+
+
+    loginUser(emailLogin.value, passwordLogin.value)
+      .then((userCredential) => {
+        // Signed in 
+        const userLogin = userCredential.user;
+        console.log(userLogin);
+        emailLogin.value = "";
+        passwordLogin.value = "";
+        const homeRoute = `${window.location.origin}/#/home`;
+        window.location.replace(homeRoute);
+      })
+      .catch((errorLogin) => {
+        const errorCodeLogin = errorLogin.code;
+        const errorMessageLogin = errorLogin.message;
+        console.log(errorCodeLogin, errorMessageLogin);
+        
+        switch (errorCodeLogin) {
+          case 'auth/email-already-in-use':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'Esta cuenta ya existe!';
+            break;
+          case 'auth/invalid-email':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'Correo electrónico no válido!';
+            break;
+          case 'auth/weak-password':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'La contraseña debe tener minimo 6 caracteres!';
+            break;
+
+          default:
+            break;
+        }
+
+        emailLogin.value = "";
+        passwordLogin = "";
 
       });
   });
