@@ -2,8 +2,7 @@
 export const registerUser = (email, password) => {
   /*  const email = "test@example.com";
    const password = "hunter2"; */
-   return firebase.auth().createUserWithEmailAndPassword(email, password);
-  
+  return firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
 
@@ -46,5 +45,3 @@ export const registerView = `
   </div>
 </section>  
 `;
-
-
