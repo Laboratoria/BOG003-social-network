@@ -14,8 +14,8 @@ export const showTemplate = (hash) => {
       console.log(hash);
       containerAPP.appendChild(login());
       break;
-    case '#/profile':
-      // containerAPP.appendChild(profile());
+    case '#/post':
+      // containerAPP.appendChild(post());
       console.log(hash);
       break;
     default:
