@@ -32,6 +32,14 @@ export const register = () => {
                 <span id='errorMessage' class='errorMessage'></span>
 
             </div>
+            <!--Creación Modal--->
+            <div id='modalContainer' class='modalContainer'>
+              <div class='modal'>
+                <h1>OtaKuGeeK <br>オタク</h1>
+                <img src='IMG/like.png' width='100' alt='imagen anime'>
+                <p>🐱‍💻💌Usuario creado exitosamente, verifica la bandeja de entrada de tu correo y luego <a href="#/login">Inicia sesión</a></p>
+              </div>
+            </div>
 
             <div class='logContainer'>
                 <h4>¿Ya tienes una cuenta?</h4>
@@ -65,7 +73,7 @@ export const register = () => {
           return emailVerification();
         })
         .then(() => {
-          divRegister.querySelector('#errorMessage').innerHTML = '✅🐱‍💻💌Usuario creado exitosamente, verifica la bandeja de entrada de tu correo y luego <a href="#/login">Inicia sesión</a>';
+          divRegister.querySelector('#modalContainer').style.visibility = 'visible';
         })
         .catch((error) => {
           const errorCode = error.code;
