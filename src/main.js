@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 import { router } from './router/index.routes.js';
-import { registerUser } from './views/register.js';
+import { registerUser, emailVerification } from './views/register.js';
 import { loginUser } from './views/login.js';
 
 
@@ -14,26 +14,34 @@ const enviar = document.querySelector('#register');
 if (enviar) {
   enviar.addEventListener('click', async (e) => {
     e.preventDefault();
+    let userName = document.querySelector('#user-name');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
     const registerError = document.querySelector('#register-error');
 
 
-    registerUser(email.value, password.value)
+    registerUser(email.value, password.value, userName.value)
       .then((userCredential) => {
-        // Signed in 
+        // Signed in
         const user = userCredential.user;
-        console.log(user);
+        user.updateProfile({
+          displayName: userName,
+        }) 
+        
         email.value = "";
         password.value = "";
+        userName.value = "";
+
         const loginRoute = `${window.location.origin}/#/login`;
+        emailVerification();
         window.location.replace(loginRoute);
+        
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-        
+
         switch (errorCode) {
           case 'auth/email-already-in-use':
             registerError.classList.add('error');
@@ -52,8 +60,10 @@ if (enviar) {
             break;
         }
 
+
         email.value = "";
         password.value = "";
+        userName.value = "";
 
       });
   });
@@ -71,18 +81,18 @@ const ingresar = document.querySelector('#ingresar');
 if (ingresar) {
   ingresar.addEventListener('click', async (e) => {
     e.preventDefault();
-    let emailLogin = document.querySelector('#email');
-    let passwordLogin = document.querySelector('#password');
+    let email = document.querySelector('#email');
+    let password = document.querySelector('#password');
     const loginError = document.querySelector('#login-error');
 
 
-    loginUser(emailLogin.value, passwordLogin.value)
+    loginUser(email.value, password.value)
       .then((userCredential) => {
         // Signed in 
         const userLogin = userCredential.user;
         console.log(userLogin);
-        emailLogin.value = "";
-        passwordLogin.value = "";
+        email.value = "";
+        password.value = "";
         const homeRoute = `${window.location.origin}/#/home`;
         window.location.replace(homeRoute);
       })
@@ -92,10 +102,6 @@ if (ingresar) {
         console.log(errorCodeLogin, errorMessageLogin);
         
         switch (errorCodeLogin) {
-          case 'auth/email-already-in-use':
-            loginError.classList.add('errorLogin');
-            loginError.innerHTML = 'Esta cuenta ya existe!';
-            break;
           case 'auth/invalid-email':
             loginError.classList.add('errorLogin');
             loginError.innerHTML = 'Correo electrónico no válido!';
@@ -109,8 +115,8 @@ if (ingresar) {
             break;
         }
 
-        emailLogin.value = "";
-        passwordLogin = "";
+        email.value = "";
+        password.value = "";
 
       });
   });

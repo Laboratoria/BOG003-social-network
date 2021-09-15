@@ -1,10 +1,11 @@
 
 export const registerUser = (email, password) => {
-  /*  const email = "test@example.com";
-   const password = "hunter2"; */
-  return firebase.auth().createUserWithEmailAndPassword(email, password);
+   return firebase.auth().createUserWithEmailAndPassword(email, password);
 }
 
+export const emailVerification = () => {
+  firebase.auth().currentUser.sendEmailVerification();
+}
 
 
 export const registerView = `
@@ -28,12 +29,22 @@ export const registerView = `
 
     <form class="form-register">
       <div class="input-icono">
+        <input id="user-name" type="text" placeholder="Nombre de usuario">
+        <img class="" src="../img/dog1.png" alt="">
+      </div>
+      
+      <div class="input-icono">
         <input id="email" type="text" placeholder="Correo electronico">
         <img class="" src="../img/email-icon.svg" alt="">
       </div>
 
       <div class="input-icono">
         <input id="password" type="password" placeholder="Contraseña">
+        <img class="" src="../img/password-icon.svg" alt="">
+      </div>
+
+      <div class="input-icono">
+        <input id="confirm-password" type="password" placeholder="Confirmar contraseña">
         <img class="" src="../img/password-icon.svg" alt="">
       </div>
       
