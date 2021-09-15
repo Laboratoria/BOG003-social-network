@@ -1,6 +1,7 @@
 // Importar funcion viewRegister
 import { register } from './templates/register.js';
 import { login } from './templates/login.js';
+import { post } from './templates/post.js';
 
 export const showTemplate = (hash) => {
   const containerAPP = document.getElementById('app');
@@ -15,8 +16,8 @@ export const showTemplate = (hash) => {
       containerAPP.appendChild(login());
       break;
     case '#/post':
-      // containerAPP.appendChild(post());
       console.log(hash);
+      containerAPP.appendChild(post());
       break;
     default:
       containerAPP.innerHTML = '<h2>Página no encontrada</h2>';

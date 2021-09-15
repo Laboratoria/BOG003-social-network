@@ -119,11 +119,59 @@ h4{
     text-shadow: -2px -2px 1px darkblue;
 }
 
+/*Estilos Modal*/
+.modalContainer {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    padding: 10px 20px;
+    height: auto;
+    width: auto;
+    background-color: rebeccapurple;
+    border: black 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    color: mintcream;
+    overflow: hidden;
+    /*flex*/
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-around;
+    gap: 10px;
+    /*Entrada*/
+    position: relative;
+    transform:translateY(0%);
+    transition: 1s;
+
+}
+
+.modal a {
+    color: darkturquoise;
+    font-weight: bold;
+}
 
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){
     .divFlex {
         height: 100vh;
         align-items: center;
+    }
+
+    .modal{
+        width: 45%;
+        height: 50%;
     }
 }
