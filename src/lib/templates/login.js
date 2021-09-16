@@ -50,14 +50,12 @@ export const login = () => {
 
     signIn(email, password).then((res) => {
       // Entro al objeto y coloco el usuario
-      // console.log(res.user.emailVerified);
-      setTimeout(() => {
-        if (res.user.emailVerified === false) {
-          errorMessage.innerHTML = '⚠️ Debe validar su correo para iniciar sesión';
-        } else {
-          window.location.hash = '#/post';
-        }
-      }, 1000);
+      console.log(res.user);
+      if (res.user.emailVerified === false) {
+        errorMessage.innerHTML = '⚠️ Debe validar su correo para iniciar sesión';
+      } else {
+        window.location.hash = '#/muro';
+      }
     })
       .catch((error) => {
         const errorCode = error.code;

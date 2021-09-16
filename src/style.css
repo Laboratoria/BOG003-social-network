@@ -163,6 +163,73 @@ h4{
     font-weight: bold;
 }
 
+/* Estilos Header pagina post.js*/
+header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(45deg, rgb(38, 45, 145), rgb(219, 124, 243), rgb(230, 120, 47));
+    width: 100%;
+    height: 60px;
+    /*Flex*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilos div para todo el contenido del muro post.js */
+.divMuro{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+}
+
+header h1 {
+    font-size: 15px;
+}
+
+.wallUser{
+    border: silver solid;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin: 70px 10px 5px;
+}
+
+.post{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 10px 10px 10px 8px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    gap: 7px;
+    align-items: center;
+}
+
+.timeline{
+    border: silver solid;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin: 70px 10px 5px;
+}
+
+
+
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){
     .divFlex {

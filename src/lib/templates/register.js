@@ -93,7 +93,7 @@ export const register = () => {
           }
         });
     } else {
-      errorMessage.innerHTML = 'Las contraseñas no coinciden';
+      errorMessage.innerHTML = '❎❌Las contraseñas no coinciden';
     }
   });
   return divRegister;
