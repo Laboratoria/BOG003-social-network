@@ -1,28 +1,51 @@
 // Importar funcion viewRegister
 import { register } from './templates/register.js';
 import { login } from './templates/login.js';
-import { post } from './templates/post.js';
+import { muro } from './templates/muro.js';
+
+// craer variable con resultadao Booleano para validadr si el usuarios esta loguedo
+let isUserLogin = false;
 
 export const showTemplate = (hash) => {
   const containerAPP = document.getElementById('app');
   containerAPP.innerHTML = '';
   switch (hash) {
     case '':
-      console.log(hash);
-      containerAPP.appendChild(register());
+      // Proteger las rutas
+      if (isUserLogin) {
+        window.location.hash = '#/muro';
+      } else {
+        containerAPP.appendChild(register());
+      }
       break;
     case '#/login':
-      console.log(hash);
-      containerAPP.appendChild(login());
+      if (isUserLogin) {
+        window.location.hash = '#/muro';
+      } else {
+        containerAPP.appendChild(login());
+      }
       break;
-    case '#/post':
-      console.log(hash);
-      containerAPP.appendChild(post());
+    case '#/muro':
+      if (isUserLogin) {
+        containerAPP.appendChild(muro());
+      } else {
+        window.location.hash = '#/login';
+      }
       break;
     default:
       containerAPP.innerHTML = '<h2>Página no encontrada</h2>';
   }
 };
+
+firebase.auth().onAuthStateChanged((user) => {
+  console.log(user);
+  if (user) {
+    isUserLogin = true;
+  } else {
+    isUserLogin = false;
+  }
+  showTemplate(window.location.hash);
+});
 
 /*
 export const changeRoute = (hash) => {
