@@ -1,4 +1,6 @@
 @import url(./base/register.css);
+@import url(./base/posts.css);
+@import url(./base/login.css);
 
 * {
   margin: 0px;
@@ -7,5 +9,3 @@
   font-family: "Roboto", sans-serif;
   font-weight: 200;
 }
-
-
