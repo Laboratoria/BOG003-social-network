@@ -1,6 +1,12 @@
 
-export const registerUser = (email, password) => {
-   return firebase.auth().createUserWithEmailAndPassword(email, password);
+export const registerUser = (email, password, confirmPassword) => {
+  if (password === confirmPassword) {
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  } else {
+   throw {code: "passwords/no-match"};
+
+  }
+  
 }
 
 export const emailVerification = () => {
@@ -27,29 +33,29 @@ export const registerView = `
 
     <p id="register-error"></p>
 
-    <form class="form-register">
+    <form class="form-register" id="register">
       <div class="input-icono">
-        <input id="user-name" type="text" placeholder="Nombre de usuario">
+        <input id="user-name" type="text" placeholder="Nombre de usuario" required>
         <img class="" src="../img/dog1.png" alt="">
       </div>
       
       <div class="input-icono">
-        <input id="email" type="text" placeholder="Correo electronico">
+        <input id="email" type="text" placeholder="Correo electronico" required>
         <img class="" src="../img/email-icon.svg" alt="">
       </div>
 
       <div class="input-icono">
-        <input id="password" type="password" placeholder="Contraseña">
+        <input id="password" type="password" placeholder="Contraseña" required>
         <img class="" src="../img/password-icon.svg" alt="">
       </div>
 
       <div class="input-icono">
-        <input id="confirm-password" type="password" placeholder="Confirmar contraseña">
+        <input id="confirm-password" type="password" placeholder="Confirmar contraseña" required>
         <img class="" src="../img/password-icon.svg" alt="">
       </div>
       
 
-      <button id="register">Registrate</button>
+      <button type="submit">Registrate</button>
     </form>
 
     <a href="#/login">¿Ya tienes una cuenta? Inicia sesión</a>
