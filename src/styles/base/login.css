@@ -11,14 +11,7 @@ body {
     padding: 12px 0px 9px 0px;
     margin-bottom: 5px;
 }
-   
-.menu {
-    display: flex;
-    flex-direction:column;
-    justify-content: space-between;
-    width: auto;
-    height: 70px;
-}
+
      
 .logo {
     color: #ffffff;
@@ -30,14 +23,7 @@ body {
     text-shadow: #20dad8 2px 2px 4px;
 }
      
-.logo a {
-    font-family: 'Aclonica', sans-serif;
-    color:#7BBDC3;
-    text-decoration:none;
-    font-size: 60px;
-    align-content:flex-start;
-}
-   
+
    
 .loginSection {
     display: flex;
@@ -49,6 +35,7 @@ body {
 }
    
 .logo-a {
+    width: 100%;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -70,11 +57,11 @@ body {
 }
      
 .loginForm .logo {
-    width: 100px;
-    height: 100px;
+    width: 124px;
+    height: 124px;
     position: absolute;
-    top: -50px;
-    left: 134px
+    top: -58px;
+    left: 122px;
 }
    
 .loginForm h1 {
@@ -86,28 +73,63 @@ body {
     text-align: center;
 }
    
-.loginForm input {
+ .loginForm input {
     width: 100%;
-    margin-bottom: 25px;
-    border: none;
+    border: 1px solid #7bbdc3;
+    box-sizing: border-box;
     background: #F7F8F4;
     outline: none;
     height: 47px;
-    color: #032C3D;
     font-size: 25px;
     font-weight: 400;
     border-radius: 14px;
     text-align: center;
 }
-   
-#ingresar {
-    background: #032C3D;
+
+input[type=text] {
+    background: #F7F8F4;
     color: #ffffff;
-    font-size: 36px;
-    border-radius: 14px;
+    font-size: 17px;
+    border-radius: 23px;
     text-align: center;
-    height: 58px;
+    height: 42px;
+    border: 2px solid #7BBDC3;
+    width: 101%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
 }
+
+input[type= password] {
+    background: #F7F8F4;
+    color: #ffffff;
+    font-size: 17px;
+    border-radius: 23px;
+    text-align: center;
+    height: 42px;
+    border: 2px solid #7BBDC3;
+    width: 101%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}*/
+
+   
+button {
+    width: 292px;
+    height: 50px;
+    background: #032c3d;
+    opacity: 0.93;
+    border-radius: 14px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 32px;
+}
+
    
 .recordarYregistrar a {
     text-decoration: none;
