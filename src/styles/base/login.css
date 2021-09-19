@@ -73,7 +73,7 @@ body {
     text-align: center;
 }
    
- .loginForm input {
+/* .loginForm input {
     width: 100%;
     border: 1px solid #7bbdc3;
     box-sizing: border-box;
@@ -85,8 +85,8 @@ body {
     border-radius: 14px;
     text-align: center;
 }
-
-input[type=text] {
+ */
+/* input[type=text] {
     background: #F7F8F4;
     color: #ffffff;
     font-size: 17px;
@@ -100,9 +100,9 @@ input[type=text] {
     display: flex;
     margin: 10px;
     padding: 10px;
-}
+} */
 
-input[type= password] {
+/* input[type= password] {
     background: #F7F8F4;
     color: #ffffff;
     font-size: 17px;

@@ -1,4 +1,3 @@
-
 export const registerUser = (email, password) => {
    return firebase.auth().createUserWithEmailAndPassword(email, password);
 }
