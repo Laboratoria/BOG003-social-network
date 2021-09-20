@@ -163,7 +163,7 @@ h4{
     font-weight: bold;
 }
 
-/* Estilos Header pagina post.js*/
+/* ESTILOS PAGINA muro.js*/
 header{
     position: absolute;
     top: 0px;
@@ -198,23 +198,44 @@ header h1 {
     display: flex;
     flex-flow: wrap column;
     align-items: center;
-    padding: 10px;
+    padding: 10px 10px;
     gap: 10px;
     margin: 70px 10px 5px;
 }
 
-.post{
+table{
+    width: 50%;
+    display: flex;
+    flex-flow: wrap column;
+}
+
+tr{
+    display: flex;
+    justify-content: space-around;
+}
+
+.postContainer{
     background-color:rebeccapurple;
     border-radius: 15px;
     border: darkblue 2px solid;
-    padding: 10px 30px;
-    margin: 10px 10px 10px 8px;
+    padding: 10px 10px;
     box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    height: 70px;
+    width: 270px;
     /*Flex*/
     display: flex;
     flex-flow: wrap column;
-    gap: 7px;
     align-items: center;
+}
+
+.createPost{
+    width: 100%;
+    padding: 3px 10px 3px 3px;
+    font-size: 13px;
+    height: 95%;
+    width: 100%;
+    overflow: auto;
+    border-radius: 5px;
 }
 
 .timeline{
@@ -228,6 +249,21 @@ header h1 {
     margin: 70px 10px 5px;
 }
 
+.userContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 10px 10px 10px 8px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    overflow:auto;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    gap: 7px;
+    align-items: center;
+}
 
 
 /*Estilo para Desktop mediaQuery*/

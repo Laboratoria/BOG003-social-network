@@ -14,15 +14,19 @@ export const muro = () => {
           <div class = 'wallUser'>
               <img src='IMG/Naruto.png' width='' alt='naruto' class='imgNaruto'>
               <h2>¡Hola!</h2>
-              <div class='postViews'>
-                <p>Post</p>
-                <!---Contar de post--->
-              </div>
-              <div class='likes'>
-                <p>Likes</p>
-                <!--- Contar de likes--->
-              </div>
-              <div class='post'>
+              
+              <table>
+                <tr>
+                  <td>Post</td>
+                  <td>Likes</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>0</td>
+                </tr>
+              </table>
+              
+              <div class='postContainer'>
                 <input type='text' id='createPost' class='createPost' placeholder='¿Qué te gustaría compartir hoy?'></input>
               </div>
               <button id='publish' class='btnregister'>Publicar</button>
@@ -30,7 +34,7 @@ export const muro = () => {
 
       
           <div class='timeline'>
-              <div class='formContainer'>
+              <div class='userContainer'>
                   <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
                   <h4>Usuario XXX</h4>    
                   <input type='email' id='emailogin' class='signUp' placeholder='Bla bla bla ...' required='' autocomplete='off'></input>
