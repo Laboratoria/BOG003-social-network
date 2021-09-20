@@ -1,0 +1,139 @@
+.login-section {
+  padding: 17px 0;
+  background-image: url("../../img/background-login.svg"); /* The image used */
+  height: 100vh; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the backgroun*/
+}
+
+.login-section .login__header {
+  margin-bottom: 64px;
+}
+.login-section .login__header .icono-casa {
+  margin-left: 56px;
+}
+
+.login-section .login__header .barra {
+  height: 107px;
+  width: 100%;
+  background: #032c3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-section .login__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.login-section .login__body .login__body-container {
+  background: rgba(245, 70, 83, 0.94);
+  padding: 55px 16px 16px 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.login-section .login__body .huella {
+  position: absolute;
+  top: -60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.login-section .login__body .titles {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 44px;
+  line-height: 98.3%;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin-bottom: 41px;
+  justify-content: center;
+}
+
+.login-section .login__body .error {
+  font-size: 16px;
+  color: red;
+  margin-bottom: 30px;
+}
+
+.login-section .login__body .titles .title-2 {
+  margin-left: 40px;
+}
+
+.login-section .login__body .form-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
+}
+
+.login-section .login__body .form-login .input-icono {
+  position: relative;
+}
+
+.login-section .login__body .form-login .input-icono img {
+  position: absolute;
+  left: 15px;
+  top: 1;
+  bottom: 1;
+  top: 11px;
+}
+
+.login-section .login__body .form-login .input-icono input {
+  width: 292px;
+  height: 47px;
+  text-align: center;
+  background: #f7f8f4;
+  border: 1px solid #7bbdc3;
+  box-sizing: border-box;
+  border-radius: 14px;
+  font-size: 16px;
+}
+
+.login-section .login__body .form-login .input-icono input::placeholder {
+  color: rgba(3, 44, 61, 0.6);
+}
+
+.login-section .login__body .form-login .general {
+  width: 292px;
+  height: 71px;
+  background: #032c3d;
+  opacity: 0.93;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.login-section .login__body .form-login .google {
+  width: 292px;
+  height: 71px;
+  background: #fff;
+  border-radius: 14px;
+  color: #414141;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.login-section .login__body a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+}

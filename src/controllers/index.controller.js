@@ -1,5 +1,6 @@
 import {homeView} from '../views/home.js';
 import {registerView} from '../views/register.js';
+import {loginView} from '../views/login.js';
 
 
 
@@ -11,6 +12,14 @@ export const Home = () => {
     return divElement;
 };
 
+
+export const Login = () => {
+    
+    const divElement = document.createElement('div');
+    divElement.classList = "text-black";
+    divElement.innerHTML = loginView;
+    return divElement;
+};
 
 export const Register = () => {
     
