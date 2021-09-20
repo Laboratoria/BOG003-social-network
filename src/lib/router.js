@@ -39,9 +39,10 @@ export const showTemplate = (hash) => {
 
 firebase.auth().onAuthStateChanged((user) => {
   console.log(user);
-  if (user) {
+  if (user && user.emailVerified) {
     isUserLogin = true;
   } else {
+    console.log('Entro al else');
     isUserLogin = false;
   }
   showTemplate(window.location.hash);

@@ -8,7 +8,7 @@ export const register = () => {
   divRegister.setAttribute('class', 'divFlex');
 
   // creando esquema HTML
-  const viewRegister = `
+  const viewRegister = /* html */`
         <div class = 'welcomeContainer'>
             <h1>OtaKuGeeK <br>オタク</h1>
             <img src='IMG/sombra-logo.svg' width='100' alt='logo sin fondo' class='logo'>
@@ -21,11 +21,11 @@ export const register = () => {
                 <h2>Crea una cuenta</h2>
                 <h3>Es fácil, rápido y divertido!!!</h3>
                     
-                <input type='email' id='email' class='signUp' placeholder='Ingresa tu Email' required='' autocomplete='off'></input>
+                <input type='email' id='email' class='signUp' placeholder='Ingresa tu Email' required='' autocomplete='off'>
                 
-                <input type='password' id='password' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
+                <input type='password' id='password' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'>
             
-                <input type='password' id='confirmPassword' class='signUp' placeholder='Confirma tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
+                <input type='password' id='confirmPassword' class='signUp' placeholder='Confirma tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'>
 
                 <button type='button' id='btnregister' class='btnregister'>Registrarte</button>
 
@@ -70,10 +70,8 @@ export const register = () => {
           user.updateProfile({
             displayName: email,
           });
-          return emailVerification();
-        })
-        .then(() => {
           divRegister.querySelector('#modalContainer').style.visibility = 'visible';
+          return emailVerification();
         })
         .catch((error) => {
           const errorCode = error.code;
