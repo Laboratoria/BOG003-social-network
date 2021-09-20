@@ -3,10 +3,10 @@ export const registerUser = (email, password, confirmPassword) => {
   if (password === confirmPassword) {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
   } else {
-   throw {code: "passwords/no-match"};
+    throw { code: "passwords/no-match" };
 
   }
-  
+
 }
 
 export const emailVerification = () => {
@@ -36,7 +36,7 @@ export const registerView = `
     <form class="form-register" id="register">
       <div class="input-icono">
         <input id="user-name" type="text" placeholder="Nombre de usuario" required>
-        <img class="" src="../img/dog1.png" alt="">
+        <img class="" src="../img/dog.png" alt="" width="26">
       </div>
       
       <div class="input-icono">
@@ -62,3 +62,6 @@ export const registerView = `
   </div>
 </section>  
 `;
+
+
+
