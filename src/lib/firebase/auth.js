@@ -11,6 +11,8 @@ export const emailVerification = () => firebase
 export const signIn = (email, password) => firebase.auth()
   .signInWithEmailAndPassword(email, password);
 
+export const closeSession = () => firebase.auth().signOut();
+
 // Crear funcion para autenticar con google
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
