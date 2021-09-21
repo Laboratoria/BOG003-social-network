@@ -2,6 +2,7 @@
 import { router } from './router/index.routes.js';
 import { registerUser, emailVerification } from './views/register.js';
 import { loginUser, loginGoogle } from './views/login.js';
+import { signOut } from './views/home.js';
 
 
 router(window.location.hash);
@@ -157,4 +158,9 @@ if (login) {
   
 };
 
+const btnLogOut = document.querySelector('#logout');
 
+btnLogOut.addEventListener('click', async () => {
+  await signOut();
+    window.location.hash ='#/login';
+});

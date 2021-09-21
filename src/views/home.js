@@ -1,3 +1,7 @@
+export const signOut = () => {
+    firebase.auth().signOut();
+}
+
 export const homeView = `
 <header class="header">
     <div class="menu">
@@ -10,7 +14,9 @@ export const homeView = `
     <nav class="nav">
         <a href="#"><img src="../img/home-muro.png" alt="home"></a>
         <a href="#"><img src="../img/paw-home.png" alt="perfil"></a>
-        <a href="#"><img src="../img/alarm-home.png" alt="notificaciones"></a>                
+        <button id="logout">
+            <img src="../img/logout-home.png" alt="logout">
+        </button>                
     </nav>
 </div>
 <div class="muroHome">
