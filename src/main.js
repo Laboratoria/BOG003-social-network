@@ -117,6 +117,7 @@ if (login) {
         const homeRoute = `${window.location.origin}/#/home`;
         window.location.replace(homeRoute);
       })
+      
       .catch((errorLogin) => {
         const errorCodeLogin = errorLogin.code;
         const errorMessageLogin = errorLogin.message;
@@ -142,7 +143,7 @@ if (login) {
             break;
         }
 
-        email.value = "";
+         userName.value = "";
         password.value = "";
 
       });
