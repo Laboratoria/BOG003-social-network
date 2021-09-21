@@ -15,14 +15,3 @@ export const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-// Se inicializan las variables para verificar email y usuario 
-/* var currentUser = null;
-var emailVerified = null;
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    currentUser = user;
-    emailVerified = user.emailVerified;
-  } else {
-    currentUser = null;
-  }
-}); */

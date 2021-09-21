@@ -1,12 +1,3 @@
-.login-section {
-  padding: 17px 0;
-  background-image: url("../../img/background-login.svg"); /* The image used */
-  height: 100vh; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the backgroun*/
-}
-
 .login-section .login__header {
   margin-bottom: 64px;
 }

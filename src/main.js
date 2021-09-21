@@ -1,6 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 import { router } from './router/index.routes.js';
 import { registerUser, emailVerification } from './views/register.js';
+import { loginUser, loginGoogle } from './views/login.js';
 
 
 router(window.location.hash);
@@ -75,10 +76,10 @@ if (enviar) {
           confirmPassword.value = "";
 
         });
-    } catch(error) {
+    } catch (error) {
       console.log(error);
       switch (error.code) {
-        
+
         case 'passwords/no-match':
           registerError.classList.add('error');
           registerError.innerHTML = 'Las contraseñas no coinciden!';
@@ -96,5 +97,64 @@ if (enviar) {
     }
   });
 }
+
+const login = document.querySelector('#login');
+
+if (login) {
+  login.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let email = document.querySelector('#email-login');
+    let password = document.querySelector('#password-login');
+    const loginError = document.querySelector('#login-error');
+
+    loginUser(email.value, password.value)
+      .then((userCredential) => {
+        // Signed in 
+        const userLogin = userCredential.user;
+        console.log(userLogin);
+        email.value = "";
+        password.value = "";
+        const homeRoute = `${window.location.origin}/#/home`;
+        window.location.replace(homeRoute);
+      })
+      .catch((errorLogin) => {
+        const errorCodeLogin = errorLogin.code;
+        const errorMessageLogin = errorLogin.message;
+        console.log(errorCodeLogin, errorMessageLogin);
+
+        switch (errorCodeLogin) {
+          case 'auth/wrong-password':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'La contraseña no es válida!';
+            break;
+
+          case 'auth/user-not-found':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'El usuario no esta registrado!';
+            break;
+
+          case 'auth/invalid-email':
+            loginError.classList.add('errorLogin');
+            loginError.innerHTML = 'No corresponde a un correo electrónico!';
+            break;
+
+          default:
+            break;
+        }
+
+        email.value = "";
+        password.value = "";
+
+      });
+  });
+
+  const btnGoogle = document.querySelector('#google');
+  
+  btnGoogle.addEventListener('click', async () => {
+    await loginGoogle();
+    window.location.hash = '#/home';
+  });
+  
+};
 
 

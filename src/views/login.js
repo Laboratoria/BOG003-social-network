@@ -1,18 +1,12 @@
 
-export const loginUser = (email, password, confirmPassword) => {
-  if (password === confirmPassword) {
-    return firebase.auth().createUserWithEmailAndPassword(email, password);
-  } else {
-    throw { code: "passwords/no-match" };
-
-  }
-
+export const loginUser = (email, password) => {
+  return firebase.auth().signInWithEmailAndPassword(email, password);
 }
 
-export const emailVerification = () => {
-  firebase.auth().currentUser.sendEmailVerification();
-}
-
+export const loginGoogle = () => {
+  const authProvider = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(authProvider);
+};
 
 export const loginView = `
 <section class="login-section">
@@ -38,17 +32,17 @@ export const loginView = `
       <form class="form-login" id="login">
         
         <div class="input-icono">
-          <input id="email" type="text" placeholder="Correo electronico" required>
+          <input id="email-login" type="text" placeholder="Correo electronico" required>
           <img class="" src="../img/email-icon.svg" alt="">
         </div>
 
         <div class="input-icono">
-          <input id="password" type="password" placeholder="Contraseña" required>
+          <input id="password-login" type="password" placeholder="Contraseña" required>
           <img class="" src="../img/password-icon.svg" alt="">
         </div>
 
         <button class="general" type="submit">Ingresar</button>
-        <button class="google" type="submit"><img class="google-icon" src="../img/google.png" alt="" width="29"> Ingresar con Google</button>
+        <button id="google" class="google" type="submit"><img class="google-icon" src="../img/google.png" alt="" width="29"> Ingresar con Google</button>
       </form>
 
       <a href="#/register">¿No tienes una cuenta? Registrate aquí</a>
