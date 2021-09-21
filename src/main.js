@@ -115,7 +115,7 @@ if (login) {
         console.log(userLogin);
         email.value = "";
         password.value = "";
-        const homeRoute = `${window.location.origin}/#/home`;
+        const homeRoute = `${window.location.origin}/#/`;
         window.location.replace(homeRoute);
       })
       
@@ -154,14 +154,16 @@ if (login) {
   
   btnGoogle.addEventListener('click', async () => {
     await loginGoogle();
-    window.location.hash = '#/home';
+    window.location.hash = '#/';
   });
   
 };
 
 const btnLogOut = document.querySelector('#logout');
+if (btnLogOut) {
 
-btnLogOut.addEventListener('click', async () => {
+btnLogOut.addEventListener('click', async () => { 
   await signOut();
     window.location.hash ='#/login';
 });
+};
