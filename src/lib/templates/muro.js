@@ -17,6 +17,8 @@ export const muro = () => {
               <img src='IMG/Naruto.png' width='' alt='naruto' class='imgNaruto'>
               <h2>¡Hola!</h2> 
               <!-- <div id='titleUser'><div>-->  
+              <!-- <div id='titleUser'><div>-->  
+              <!-- <div id='titleUser'><div>-->  
               <table>
                 <tr>
                   <td>Post</td>
