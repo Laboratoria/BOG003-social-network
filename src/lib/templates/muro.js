@@ -1,20 +1,24 @@
+import { closeSession } from '../firebase/auth.js';
+
 export const muro = () => {
   // div contenedor de la vista div padre
   const divPost = document.createElement('div');
   divPost.setAttribute('class', 'divMuro');
 
   // Creando tag h1 titulo
-  const viewPost = `
+  const viewPost = /* html */`
           <header>
             <img src='IMG/logo-naranja.svg' width='40' alt='logo naranja' class='logoNaranja'>
             <h1>OtaKuGeeK <br>オタク</h1>
             <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
-            <a href='' id='close' class='close'>Cerrar sesión</a>
+            <button id='close' class='close' type='button'>Cerrar sesión</button>
           </header>
           <div class = 'wallUser'>
               <img src='IMG/Naruto.png' width='' alt='naruto' class='imgNaruto'>
-              <h2>¡Hola!</h2>
-              
+              <h2>¡Hola!</h2> 
+              <!-- <div id='titleUser'><div>-->  
+              <!-- <div id='titleUser'><div>-->  
+              <!-- <div id='titleUser'><div>-->  
               <table>
                 <tr>
                   <td>Post</td>
@@ -49,5 +53,14 @@ export const muro = () => {
   // Mostrar en pantalla tag h1
   divPost.innerHTML = viewPost;
 
+  const close = divPost.querySelector('#close');
+  close.addEventListener('click', () => {
+    closeSession().then(() => {
+      window.location.hash = '#/login';
+    });
+  });
+
+  /* const textUser = divPost.querySelector('#titleUser');
+  textUser.innerHTML = `¡Hola ${email.displaName}`; */
   return divPost;
 };
