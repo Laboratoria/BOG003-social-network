@@ -233,7 +233,8 @@ i {
 }*/
 
 /*home*/
-input[type= text] {
+
+.inputHomeOne {
     background: #F7F8F4;
     color: #ffffff;
     font-size: 17px;

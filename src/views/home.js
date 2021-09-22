@@ -1,5 +1,5 @@
 export const signOut = () => {
-    firebase.auth().signOut();
+    return firebase.auth().signOut();
 }
 
 export const homeView = `
@@ -22,7 +22,7 @@ export const homeView = `
 <div class="muroHome">
     <img class="userProfile" src="../img/usuariogato-home.png" alt="usuarioPrincipal">
     <form>
-        <input type="text" placeholder="¿Qué quieres publicar hoy?">
+        <input class="inputHomeOne" type="text" placeholder="¿Qué quieres publicar hoy?">
     </form>
 </div>
 <section publicacionesHome>

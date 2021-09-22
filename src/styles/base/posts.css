@@ -1,0 +1,222 @@
+body {
+    width: 100%;
+    overflow-x: hidden;
+    height: auto;
+    position: relative;
+}
+
+.headerPost {
+    width: 100%;
+    background-color: #032C3D;
+    padding: 12px 0px 9px 0px;
+    margin-bottom: 5px;
+}
+
+.menuA {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    width: auto;
+    height: 70px;
+}
+
+.logoA {
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'Lancelot', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: #20dad8 2px 2px 4px;
+}
+  
+.logo-A {
+    font-family: 'Aclonica', sans-serif;
+    color:#7BBDC3;
+    text-decoration:none;
+    font-size: 60px;
+    align-content:flex-start;
+}
+
+.nav {
+    width: 100%;
+    color: #ffffff;
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 61px;
+    padding-right: 10px;
+    border-bottom: 1px solid #7BBDC3; /*solo para el nav en caso de de la historia del home por ejemplo */
+}
+
+.nav a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    letter-spacing: 0.8px;
+   }
+     
+     
+.nav > div {
+    position: relative;
+    display: inline-block;
+    display: flex;
+}
+    
+.nav  div a {
+    color: #ffffff;
+    transition: all .3s;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+.postMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 11px;
+}
+
+.prePost {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    font-size: 17px;
+    color: #032C3D;
+   font-weight: 500;
+   border-bottom: 1px solid #7BBDC3;
+}
+
+.prePost h1 {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.prePost img {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post {
+padding: 10px;
+}
+
+.muroPost {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 83px;
+    padding-right: 88px;
+    border-bottom: 4px solid #7BBDC3;
+}
+
+.postForm {
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom: 2px solid #7BBDC3;
+padding: 10px;
+}
+
+
+
+.inputPost {
+    background: #F7F8F4;
+    color: #ffffff;
+    font-size: 17px;
+    border-radius: 23px;
+    text-align: center;
+    height: 188px;
+    border: 2px solid #7BBDC3;
+    width: 93%;
+    padding: 13px;
+    margin-top: 13px;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonPost {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    border-bottom: 2px solid #7BBDC3;
+}
+
+
+.button-Post {
+    width: 48%;
+    height: 30px;
+    background: #F54653;
+    font-size: 16px;
+    border-radius: 7px;
+    color: #ffffff;
+    border:none;
+}
+
+.takePartPost {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-decoration: none;
+    padding: 19px;
+    font-size: 14px;
+    border-bottom: 2px solid #7BBDC3;
+}
+   
+.takePartPost a {
+text-decoration: none;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+flex-wrap: nowrap;
+}
+
+.footerA {
+    background-color: #032C3D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0px 16px 0px;
+    position:inherit;
+    bottom: 0;
+    margin-top: 10px;
+    height: 50PX;
+}
+
+
+
