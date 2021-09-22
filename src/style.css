@@ -265,6 +265,10 @@ tr{
     align-items: center;
 }
 
+/*Estilos de la tarjeta de crear post*/
+#printPost{
+    background-color: #fff;
+}
 
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){

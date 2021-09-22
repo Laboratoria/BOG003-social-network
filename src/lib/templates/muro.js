@@ -17,8 +17,6 @@ export const muro = () => {
               <img src='IMG/Naruto.png' width='' alt='naruto' class='imgNaruto'>
               <h2>¡Hola!</h2> 
               <!-- <div id='titleUser'><div>-->  
-              <!-- <div id='titleUser'><div>-->  
-              <!-- <div id='titleUser'><div>-->  
               <table>
                 <tr>
                   <td>Post</td>
@@ -35,13 +33,12 @@ export const muro = () => {
               </div>
               <button id='publish' class='btnregister'>Publicar</button>
           </div>
-
       
           <div class='timeline'>
               <div class='userContainer'>
                   <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
                   <h4>Usuario XXX</h4>    
-                  <input type='email' id='emailogin' class='signUp' placeholder='Bla bla bla ...' required='' autocomplete='off'></input>
+                  <div id='printPost' class='signUp'></div>
                   <a href=''><img src='IMG/icono-eliminar.png' width='40' alt='icono' class='iconEliminar'></a>
                   <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
                   <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
@@ -60,7 +57,51 @@ export const muro = () => {
     });
   });
 
-  /* const textUser = divPost.querySelector('#titleUser');
-  textUser.innerHTML = `¡Hola ${email.displaName}`; */
+  // Traer las variables Firebase
+  const db = firebase.firestore();
+  const user = firebase.auth().currentUser;
+
+  // Función para guardar post y asignar id en firestore
+  function savePost() {
+    const postPublish = divPost.querySelector('#createPost').value;
+    // craer una coleccion para firestore
+    db.collection('postList')
+      .add({
+        Post: postPublish,
+        Name: user.displayName,
+      })
+      .then((docRef) => {
+        console.log('Document written with ID: ', docRef.id);
+        // Una vez que se guarde el post generara string vacio para limpiar casilla del formulario
+        divPost.querySelector('#createPost').value = '';
+      })
+      .catch((error) => {
+        console.error('Error adding document: ', error);
+      });
+  }
+
+  // Agregar funcionalidad al boton publicar
+  const btnPublish = divPost.querySelector('#publish');
+  btnPublish.addEventListener('click', () => {
+    savePost();
+  });
+
+  // Leer datos del post desde Firestore
+  const listTimeline = divPost.querySelector('.timeline');
+  db.collection('postList').get().then((querySnapshot) => {
+    listTimeline.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      listTimeline.innerHTML += /* HTML */ `
+        <div class='userContainer'>
+          <h4>${doc.data().Name}</h4>
+          <div id='printPost' class='signUp'>${doc.data().Post}</div>
+            <a href=''><img src='IMG/icono-eliminar.png' width='40' alt='icono' class='iconEliminar'></a>
+            <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
+            <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
+        </div>
+      `;
+      console.log(`${doc.id} => ${doc.data().post}`);
+    });
+  });
   return divPost;
 };
