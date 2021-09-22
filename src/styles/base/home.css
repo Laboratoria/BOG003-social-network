@@ -124,6 +124,10 @@ body {
  position: relative;
 }
 
+.buttonLogOut {
+   border:none;
+   background: transparent;
+}
 
 .loginForm .logo {
  width: 100px;

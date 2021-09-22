@@ -14,7 +14,7 @@ export const homeView = `
     <nav class="nav">
         <a href="#"><img src="../img/home-muro.png" alt="home"></a>
         <a href="#"><img src="../img/paw-home.png" alt="perfil"></a>
-        <button id="logout">
+        <button class="buttonLogOut" id="logout">
             <img src="../img/logout-home.png" alt="logout">
         </button>                
     </nav>
