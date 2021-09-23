@@ -69,6 +69,7 @@ export const muro = () => {
       .add({
         Post: postPublish,
         Name: user.displayName,
+        Date: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((docRef) => {
         console.log('Document written with ID: ', docRef.id);
@@ -94,10 +95,11 @@ export const muro = () => {
       listTimeline.innerHTML += /* HTML */ `
         <div class='userContainer'>
           <h4>${doc.data().Name}</h4>
+          <h4>${doc.data().Date}</h4>
           <div id='printPost' class='signUp'>${doc.data().Post}</div>
-            <a href=''><img src='IMG/icono-eliminar.png' width='40' alt='icono' class='iconEliminar'></a>
-            <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
-            <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
+            <a href=''><img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar'></a>
+            <a href=''><img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'></a>
+            <a href=''><img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'></a>
         </div>
       `;
       console.log(`${doc.id} => ${doc.data().post}`);
