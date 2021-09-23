@@ -89,13 +89,15 @@ export const muro = () => {
 
   // Leer datos del post desde Firestore
   const listTimeline = divPost.querySelector('.timeline');
-  db.collection('postList').get().then((querySnapshot) => {
+  db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
     listTimeline.innerHTML = '';
     querySnapshot.forEach((doc) => {
       listTimeline.innerHTML += /* HTML */ `
         <div class='userContainer'>
           <h4>${doc.data().Name}</h4>
-          <h4>${doc.data().Date}</h4>
+          <!--- formato fecha 
+          <p>${doc.data().fecha ? doc.data().fecha.toDate().toDateString() : 'sin fecha'}</p>-->
+          <h4>${doc.data().Date.toDate().toDateString()}</h4>
           <div id='printPost' class='signUp'>${doc.data().Post}</div>
             <a href=''><img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar'></a>
             <a href=''><img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'></a>
