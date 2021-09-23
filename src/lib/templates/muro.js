@@ -99,13 +99,38 @@ export const muro = () => {
           <p>${doc.data().fecha ? doc.data().fecha.toDate().toDateString() : 'sin fecha'}</p>-->
           <h4>${doc.data().Date.toDate().toDateString()}</h4>
           <div id='printPost' class='signUp'>${doc.data().Post}</div>
-            <a href=''><img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar'></a>
+
+            <a href=''><img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'></a>
+            
             <a href=''><img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'></a>
+            
             <a href=''><img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'></a>
         </div>
       `;
-      console.log(`${doc.id} => ${doc.data().post}`);
+      console.log(doc.id);
     });
   });
+
+  // Funcion eliminar post
+  const deletePost = (id) => {
+    db.collection('postList').doc(id).delete().then(() => {
+      console.log('Se elimino el post exitosamente');
+    })
+      .catch((error) => {
+        console.log('Error removing document: ', error);
+      });
+  };
+
+  const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
+  botonesEliminar.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      deletePost(e.target.dataset.id);
+    });
+  });
+
   return divPost;
 };
+
+// data-id = "${doc.id}" data-Post ="${doc.data().Post.delete()}"
+// data-post ="${doc.data().Post}" data-id = "${doc.id}"
+//  .onSnapshot(callback)
