@@ -268,6 +268,7 @@ tr{
 /*Estilos de la tarjeta de crear post*/
 #printPost{
     background-color: #fff;
+    padding: 10px;
 }
 
 /*Estilo para Desktop mediaQuery*/
