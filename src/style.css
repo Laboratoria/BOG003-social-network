@@ -271,6 +271,18 @@ tr{
     padding: 10px;
 }
 
+.iconEliminar{
+    cursor: pointer;
+}
+
+.iconEditar{
+    cursor: pointer;
+}
+
+.iconLike{
+    cursor: pointer;
+}
+
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){
     .divFlex {
