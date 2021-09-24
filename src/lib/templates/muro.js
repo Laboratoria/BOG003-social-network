@@ -3,7 +3,8 @@ import { closeSession } from '../firebase/auth.js';
 export const muro = () => {
   // div contenedor de la vista div padre
   const divPost = document.createElement('div');
-  divPost.setAttribute('class', 'divMuro');
+  /* divPost.setAttribute('class', 'divMuro'); */
+  divPost.classList.add('divMuro');
 
   // Creando tag h1 titulo
   const viewPost = /* html */`
@@ -29,20 +30,12 @@ export const muro = () => {
               </table>
               
               <div class='postContainer'>
-                <input type='text' id='createPost' class='createPost' placeholder='¿Qué te gustaría compartir hoy?'></input>
+                <input type='text' id='createPost' class='createPost' placeholder='¿Qué te gustaría compartir hoy?'/>
               </div>
               <button id='publish' class='btnregister'>Publicar</button>
           </div>
       
           <div class='timeline'>
-              <div class='userContainer'>
-                  <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
-                  <h4>Usuario XXX</h4>    
-                  <div id='printPost' class='signUp'></div>
-                  <a href=''><img src='IMG/icono-eliminar.png' width='40' alt='icono' class='iconEliminar'></a>
-                  <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
-                  <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
-              </div>
   
           </div>
           `;
@@ -87,30 +80,6 @@ export const muro = () => {
     savePost();
   });
 
-  // Leer datos del post desde Firestore
-  const listTimeline = divPost.querySelector('.timeline');
-  db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
-    listTimeline.innerHTML = '';
-    querySnapshot.forEach((doc) => {
-      listTimeline.innerHTML += /* HTML */ `
-        <div class='userContainer'>
-          <h4>${doc.data().Name}</h4>
-          <!--- formato fecha 
-          <p>${doc.data().fecha ? doc.data().fecha.toDate().toDateString() : 'sin fecha'}</p>-->
-          <h4>${doc.data().Date.toDate().toDateString()}</h4>
-          <div id='printPost' class='signUp'>${doc.data().Post}</div>
-
-            <a href=''><img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'></a>
-            
-            <a href=''><img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'></a>
-            
-            <a href=''><img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'></a>
-        </div>
-      `;
-      console.log(doc.id);
-    });
-  });
-
   // Funcion eliminar post
   const deletePost = (id) => {
     db.collection('postList').doc(id).delete().then(() => {
@@ -121,16 +90,39 @@ export const muro = () => {
       });
   };
 
-  const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
-  botonesEliminar.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      deletePost(e.target.dataset.id);
+  // Leer datos del post desde Firestore
+  const listTimeline = divPost.querySelector('.timeline');
+  listTimeline.innerHTML = '';
+  db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const node = document.createElement('div');
+      node.classList.add('userContainer');
+
+      node.innerHTML = `<h4>${doc.data().Name}</h4>
+      <h4>${doc.data().Date.toDate().toDateString()}</h4>
+      <div id='printPost' class='signUp'>${doc.data().Post}</div>
+
+        <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'/>
+        
+        <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'>
+        
+        <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>`;
+
+      const botonesEliminar = node.querySelectorAll('.iconEliminar');
+      console.log(botonesEliminar);
+      botonesEliminar.forEach((btn) => {
+        console.log(btn);
+        btn.addEventListener('click', (e) => {
+          console.log('borar post');
+          deletePost(e.target.dataset.id);
+        });
+      });
+
+      listTimeline.appendChild(node);
+
+      console.log(doc.id);
     });
   });
 
   return divPost;
 };
-
-// data-id = "${doc.id}" data-Post ="${doc.data().Post.delete()}"
-// data-post ="${doc.data().Post}" data-id = "${doc.id}"
-//  .onSnapshot(callback)
