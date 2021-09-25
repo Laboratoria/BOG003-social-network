@@ -1,6 +1,7 @@
 export const signOut = () => {
     return firebase.auth().signOut();
 }
+console.log(window.displayName);
 
 export const homeView = `
 <header class="header">

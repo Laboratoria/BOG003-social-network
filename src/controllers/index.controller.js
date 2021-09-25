@@ -1,7 +1,7 @@
 import {homeView} from '../views/home.js';
 import {registerView} from '../views/register.js';
 import {loginView} from '../views/login.js';
-import {postsView} from '../views/posts.js';
+import {postView} from '../views/post.js';
 
 
 
@@ -30,11 +30,11 @@ export const Register = () => {
     return divElement;
 };
 
-export const Posts = () => {
+export const Post = () => {
     
     const divElement = document.createElement('div');
     divElement.classList = "text-black";
-    divElement.innerHTML = postsView;
+    divElement.innerHTML = postView;
     return divElement;
 };
 

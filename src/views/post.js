@@ -1,4 +1,23 @@
-export const postsView = `
+
+export const createPost = (texto, username, email) => {
+  /* firebase.database().ref('posts/').set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  }); */
+  // Create a new post reference with an auto-generated id
+  const postListRef = firebase.database().ref('posts');
+  const newPostRef = postListRef.push();
+  return newPostRef.set({
+    texto,
+    username,
+    email
+  });
+}
+
+
+
+export const postView = `
 <header class="headerPost">
     <div class="menuA">
       <div class="logoA">
@@ -29,21 +48,15 @@ export const postsView = `
     </div>
   </div>
   <div class="postForm">
-    <form>
-      <input class="inputPost" type="text" placeholder="¿Qué quieres publicar hoy?">
+    <form id="post-form">
+      <textarea id="input-post" name="textarea" rows="10" cols="50" placeholder="¿Qué quieres publicar hoy?"></textarea>
+      <div class="buttonPost">
+        <button class="button-Post type="submit">Publicar</button>
+        <button id="btnCancel" class="button-Post type="submit">Cancelar</button>
+      </div>
     </form>
   </div>
-  <div class="buttonPost">
-    <button class="button-Post type="submit">Publicar</button>
-    <button class="button-Post type="submit">Guardar</button>
-  </div>
-  <div class="takePartPost">
-    <a href="#"><img src="../img/Likes-muro.png" alt="like">  Me gusta</a>
-    <a href="#"><img src="../img/comment.png" alt="comment">  Comentar</a>
-    <a href="#"><img src="../img/share.png" alt="share">  Compartir</a> 
-  </div>
+  
 </section>
-<footer class="footerA">
-  <div class="sections">
-</footer>
+
 `;

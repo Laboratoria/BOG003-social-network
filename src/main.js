@@ -113,12 +113,17 @@ if (login) {
         // Signed in 
         const userLogin = userCredential.user;
         console.log(userLogin);
+        if (userLogin) {
+          window.displayName = userLogin.displayName;
+          window.email = userLogin.email;
+        }
+        
         email.value = "";
         password.value = "";
         const homeRoute = `${window.location.origin}/#/`;
         window.location.replace(homeRoute);
       })
-      
+
       .catch((errorLogin) => {
         const errorCodeLogin = errorLogin.code;
         const errorMessageLogin = errorLogin.message;
@@ -144,26 +149,49 @@ if (login) {
             break;
         }
 
-         userName.value = "";
+        email.value = "";
         password.value = "";
 
       });
   });
 
   const btnGoogle = document.querySelector('#google');
-  
+
   btnGoogle.addEventListener('click', async () => {
     await loginGoogle();
     window.location.hash = '#/';
   });
-  
+
 };
 
 const btnLogOut = document.querySelector('#logout');
 if (btnLogOut) {
 
-btnLogOut.addEventListener('click', async () => { 
-  await signOut();
-    window.location.hash ='#/login';
-});
+  btnLogOut.addEventListener('click', async () => {
+    await signOut();
+    window.location.hash = '#/login';
+  });
 };
+
+const post = document.querySelector('#post-form');
+
+if (post) {
+  post.addEventListener('submit',(e) => {
+    e.preventDefault();
+    let inputPost = document.querySelector('#input-post');
+    if (window.displayName && window.email) {
+      createPost(inputPost.value, window.displayName, window.email)
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((error) => {
+
+          console.log(error);
+
+        })
+
+    }
+
+
+  });
+}

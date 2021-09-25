@@ -140,26 +140,22 @@ border-bottom: 2px solid #7BBDC3;
 padding: 10px;
 }
 
+.postForm form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 
-.inputPost {
+
+#inputPost {
     background: #F7F8F4;
-    color: #ffffff;
-    font-size: 17px;
     border-radius: 23px;
     text-align: center;
     height: 188px;
     border: 2px solid #7BBDC3;
     width: 93%;
     padding: 13px;
-    margin-top: 13px;
-    margin-left: 10px;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-content: space-around;
-    justify-content: center;
-    align-items: center;
 }
 
 .buttonPost {
@@ -182,41 +178,8 @@ padding: 10px;
     border:none;
 }
 
-.takePartPost {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-    text-decoration: none;
-    padding: 19px;
-    font-size: 14px;
-    border-bottom: 2px solid #7BBDC3;
-}
-   
-.takePartPost a {
-text-decoration: none;
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-flex-wrap: nowrap;
-}
 
-.footerA {
-    background-color: #032C3D;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 16px 0px 16px 0px;
-    position:inherit;
-    bottom: 0;
-    margin-top: 10px;
-    height: 50PX;
-}
+
 
 
 
