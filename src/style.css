@@ -266,9 +266,11 @@ tr{
 }
 
 /*Estilos de la tarjeta de crear post*/
-#printPost{
+.printPost{
     background-color: #fff;
     padding: 10px;
+    width: 100%;
+    font-size: 15px;
 }
 
 .iconEliminar{
