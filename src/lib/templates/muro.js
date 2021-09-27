@@ -98,6 +98,23 @@ export const muro = () => {
       });
   };
 
+  // Funcion editar post
+  const updatePost = (id) => {
+    const postRef = db.collection('postList').doc(id);
+    const postPublish = divPost.querySelector('#createPost').value;
+    // Set the "capital" field of the city 'DC'
+    return postRef.update({
+      Post: postPublish,
+    })
+      .then(() => {
+        console.log('Document successfully updated!');
+      })
+      .catch((error) => {
+        // The document probably doesn't exist.
+        console.error('Error updating document: ', error);
+      });
+  };
+
   // Leer datos del post desde Firestore y mostrar post en muro
   const listTimeline = divPost.querySelector('.timeline');
   // db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
@@ -108,12 +125,12 @@ export const muro = () => {
         <div class='userContainer'>
           <h4>${doc.data().Name}</h4>
           <h4>${doc.data().Date.toDate().toDateString()}</h4>
-          <div id='printPost' class='signUp'>${doc.data().Post}</div>
+          <div id='${doc.id}' class='printPost'>${doc.data().Post}</div>
 
             <!-- Solo se le quito el a ref -->
             <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'>
             
-            <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'>
+            <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar' data-id = '${doc.id}' >
             
             <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>
         </div>
@@ -127,6 +144,21 @@ export const muro = () => {
         });
       });
       console.log(doc.id);
+
+      // Funcionalidad boton editar
+      const botonesEditar = divPost.querySelectorAll('.iconEditar');
+      botonesEditar.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const textPost = document.getElementById(updatePost(e.target.dataset.id)).innerHTML;
+          // updatePost(e.target.dataset.id);
+          document.getElementById(e.target.dataset.id).innerHTML = `
+            <textarea>${textPost}</textarea>
+          `;
+          const changeButton = document.getElementsByClassName('iconEditar');
+          changeButton.innerHTML = ` 
+             'Guardar'`;
+        });
+      });
     });
   });
 
