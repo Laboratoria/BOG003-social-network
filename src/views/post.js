@@ -1,18 +1,7 @@
 
 export const createPost = (texto, username, email) => {
-  /* firebase.database().ref('posts/').set({
-    username: name,
-    email: email,
-    profile_picture: imageUrl
-  }); */
-  // Create a new post reference with an auto-generated id
-  const postListRef = firebase.database().ref('posts');
-  const newPostRef = postListRef.push();
-  return newPostRef.set({
-    texto,
-    username,
-    email
-  });
+  return firebase.firestore().collection("posts").add({texto, username, email});
+  
 }
 
 

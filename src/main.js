@@ -3,6 +3,7 @@ import { router } from './router/index.routes.js';
 import { registerUser, emailVerification } from './views/register.js';
 import { loginUser, loginGoogle } from './views/login.js';
 import { signOut } from './views/home.js';
+import { createPost } from './views/post.js';
 
 
 router(window.location.hash);
@@ -114,10 +115,10 @@ if (login) {
         const userLogin = userCredential.user;
         console.log(userLogin);
         if (userLogin) {
-          window.displayName = userLogin.displayName;
-          window.email = userLogin.email;
+          localStorage.setItem("displayName", userLogin.displayName);
+          localStorage.setItem("email", userLogin.email);
         }
-        
+
         email.value = "";
         password.value = "";
         const homeRoute = `${window.location.origin}/#/`;
@@ -176,13 +177,15 @@ if (btnLogOut) {
 const post = document.querySelector('#post-form');
 
 if (post) {
-  post.addEventListener('submit',(e) => {
+  post.addEventListener('submit', (e) => {
     e.preventDefault();
     let inputPost = document.querySelector('#input-post');
-    if (window.displayName && window.email) {
-      createPost(inputPost.value, window.displayName, window.email)
+    if (localStorage.getItem("displayName") && localStorage.getItem("email")) {
+      createPost(inputPost.value, localStorage.getItem("displayName"), localStorage.getItem("email"))
         .then((res) => {
           console.log(res);
+          inputPost.value = "";
+          window.location.hash = '#/';
         })
         .catch((error) => {
 

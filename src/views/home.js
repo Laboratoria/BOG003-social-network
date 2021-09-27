@@ -1,7 +1,13 @@
 export const signOut = () => {
     return firebase.auth().signOut();
 }
-console.log(window.displayName);
+firebase.firestore().collection("posts").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+    });
+
+});
 
 export const homeView = `
 <header class="header">
