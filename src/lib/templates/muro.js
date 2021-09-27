@@ -35,6 +35,19 @@ export const muro = () => {
               <button id='publish' class='btnregister'>Publicar</button>
           </div>
       
+          <!--Creación Modal--->
+            <div id='modalContainer' class='modalContainer'>
+              <div class='modal'>
+                <h1>OtaKuGeeK <br>オタク</h1>
+                <img src='IMG/like.png' width='100' alt='imagen anime'>
+                <p>¿Estás seguro de eliminar este post?</p>
+                <button>Aceptar</button>
+                <button>Cancelar</button>
+              </div>
+            </div>>
+  
+          </div>
+
           <div class='timeline'>
               <div class='userContainer'>
                   <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
@@ -90,8 +103,10 @@ export const muro = () => {
 
   // Funcion eliminar post
   const deletePost = (id) => {
+    divPost.querySelector('#modalContainer').style.visibility = 'visible';
     db.collection('postList').doc(id).delete().then(() => {
-      alert('Se elimino el post exitosamente');
+
+      /* alert('Se elimino el post exitosamente'); */
     })
       .catch((error) => {
         console.log('Error removing document: ', error);
