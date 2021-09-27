@@ -36,6 +36,14 @@ export const muro = () => {
           </div>
       
           <div class='timeline'>
+              <div class='userContainer'>
+                  <img src='IMG/Naruto.png' width='50' alt='naruto' class='imgNaruto'>
+                  <h4>Usuario XXX</h4>    
+                  <div id='printPost' class='signUp'></div>
+                  <a href=''><img src='IMG/icono-eliminar.png' width='40' alt='icono' class='iconEliminar'></a>
+                  <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
+                  <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
+              </div>
   
           </div>
           `;
@@ -83,43 +91,41 @@ export const muro = () => {
   // Funcion eliminar post
   const deletePost = (id) => {
     db.collection('postList').doc(id).delete().then(() => {
-      console.log('Se elimino el post exitosamente');
+      alert('Se elimino el post exitosamente');
     })
       .catch((error) => {
         console.log('Error removing document: ', error);
       });
   };
 
-  // Leer datos del post desde Firestore
+  // Leer datos del post desde Firestore y mostrar post en muro
   const listTimeline = divPost.querySelector('.timeline');
-  listTimeline.innerHTML = '';
-  db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
+  // db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
+  db.collection('postList').orderBy('Date', 'desc').onSnapshot((querySnapshot) => {
+    listTimeline.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      const node = document.createElement('div');
-      node.classList.add('userContainer');
+      listTimeline.innerHTML += /* HTML */ `
+        <div class='userContainer'>
+          <h4>${doc.data().Name}</h4>
+          <h4>${doc.data().Date.toDate().toDateString()}</h4>
+          <div id='printPost' class='signUp'>${doc.data().Post}</div>
 
-      node.innerHTML = `<h4>${doc.data().Name}</h4>
-      <h4>${doc.data().Date.toDate().toDateString()}</h4>
-      <div id='printPost' class='signUp'>${doc.data().Post}</div>
+            <!-- Solo se le quito el a ref -->
+            <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'>
+            
+            <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'>
+            
+            <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>
+        </div>
+      `;
 
-        <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'/>
-        
-        <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar'>
-        
-        <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>`;
-
-      const botonesEliminar = node.querySelectorAll('.iconEliminar');
-      console.log(botonesEliminar);
+      // Funcionalidad boton eliminar
+      const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
       botonesEliminar.forEach((btn) => {
-        console.log(btn);
         btn.addEventListener('click', (e) => {
-          console.log('borar post');
           deletePost(e.target.dataset.id);
         });
       });
-
-      listTimeline.appendChild(node);
-
       console.log(doc.id);
     });
   });
