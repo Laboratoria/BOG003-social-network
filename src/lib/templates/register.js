@@ -65,14 +65,17 @@ export const register = () => {
       console.log('entro');
       //  Traer la variable createUser para registrase en la app con usuario y contraseña
       createUser(email, password)
-        .then(() => {
-          const user = firebase.auth().currentUser;
+        .then((userCredencialt) => {
+          const user = userCredencialt.user;
           user.updateProfile({
             displayName: email,
-          });
-          return emailVerification();
+          })
+            .then(() => { 
+                  return emailVerification();
+            });
         })
         .then(() => {
+          // console.log('Estoy en el then');
           divRegister.querySelector('#modalContainer').style.visibility = 'visible';
         })
         .catch((error) => {

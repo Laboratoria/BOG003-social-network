@@ -164,7 +164,7 @@ export const muro = () => {
       const botonesEditar = divPost.querySelectorAll('.iconEditar');
       botonesEditar.forEach((btn) => {
         btn.addEventListener('click', (e) => {
-          const textPost = document.getElementById(updatePost(e.target.dataset.id)).innerHTML;
+          const textPost = document.getElementById(e.target.dataset.id).innerHTML;
           // updatePost(e.target.dataset.id);
           document.getElementById(e.target.dataset.id).innerHTML = `
             <textarea>${textPost}</textarea>
