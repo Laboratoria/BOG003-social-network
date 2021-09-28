@@ -103,7 +103,7 @@ export const muro = () => {
   // Funcion editar post
   const updatePost = (id) => {
     const postRef = db.collection('postList').doc(id);
-    const postPublish = divPost.querySelector('#createPost').value;
+    const postPublish = divPost.querySelector('#editPost').value;
     // Set the "capital" field of the city 'DC'
     return postRef.update({
       Post: postPublish,
@@ -163,14 +163,21 @@ export const muro = () => {
       botonesEditar.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           const textPost = document.getElementById(e.target.dataset.id).innerHTML;
-          // updatePost(e.target.dataset.id);
           document.getElementById(e.target.dataset.id).innerHTML = `
-            <textarea>${textPost}</textarea>
+          <textarea id='editPost'>${textPost}</textarea>
           `;
+          updatePost(e.target.dataset.id);
           // const changeButton = document.getElementsByClassName('saveEdit');
           console.log('saveEdit');
           divPost.querySelector('.saveEdit').style.display = 'block';
         });
+      });
+      // Funcionalidad boton guardar
+      const btnSave = divPost.querySelector('.saveEdit');
+      btnSave.addEventListener('click', () => {
+        // updatePost();
+        console.log('hola bienvenicoso');
+        savePost();
       });
     });
   });
