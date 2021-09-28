@@ -167,9 +167,9 @@ export const muro = () => {
           document.getElementById(e.target.dataset.id).innerHTML = `
             <textarea>${textPost}</textarea>
           `;
-          const changeButton = document.getElementsByClassName('iconEditar');
-          changeButton.innerHTML = ` 
-             'Guardar'`;
+          // const changeButton = document.getElementsByClassName('saveEdit');
+          console.log('saveEdit');
+          divPost.querySelector('.saveEdit').style.display = 'block';
         });
       });
     });
