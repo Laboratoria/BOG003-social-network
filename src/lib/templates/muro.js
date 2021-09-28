@@ -34,17 +34,6 @@ export const muro = () => {
               </div>
               <button id='publish' class='btnregister'>Publicar</button>
           </div>
-      
-          <!--Creación Modal--->
-            <div id='modalContainer' class='modalContainer'>
-              <div class='modal'>
-                <h1>OtaKuGeeK <br>オタク</h1>
-                <img src='IMG/like.png' width='100' alt='imagen anime'>
-                <p>¿Estás seguro de eliminar este post?</p>
-                <button>Aceptar</button>
-                <button>Cancelar</button>
-              </div>
-            </div>>
   
           </div>
 
@@ -57,8 +46,8 @@ export const muro = () => {
                   <a href=''><img src='IMG/icono-editar.png' width='40' alt='icono' class='iconEditar'></a>
                   <a href=''><img src='IMG/icono-like.png' width='40' alt='icono' class='iconLike'></a>
               </div>
-  
           </div>
+
           `;
 
   // Mostrar en pantalla tag h1
@@ -103,9 +92,7 @@ export const muro = () => {
 
   // Funcion eliminar post
   const deletePost = (id) => {
-    divPost.querySelector('#modalContainer').style.visibility = 'visible';
     db.collection('postList').doc(id).delete().then(() => {
-
       /* alert('Se elimino el post exitosamente'); */
     })
       .catch((error) => {
@@ -146,6 +133,9 @@ export const muro = () => {
             <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'>
             
             <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar' data-id = '${doc.id}' >
+
+            <!-- Crear botton Guardar, cuando el usuario edite el post -->
+            <button id = 'saveEdit' class = 'saveEdit'>Guardar</button>
             
             <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>
         </div>
@@ -155,7 +145,15 @@ export const muro = () => {
       const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
       botonesEliminar.forEach((btn) => {
         btn.addEventListener('click', (e) => {
-          deletePost(e.target.dataset.id);
+          // Funcion para preguntar confirmacion eliminar post
+          const r = confirm('¿Quieres eliminar este post?');
+          if (r === true) {
+            alert('You pressed OK!');
+            // Traemos la Funcion eliminar para que si se da aceptar se elimine post
+            deletePost(e.target.dataset.id);
+          } else {
+            alert('You pressed Cancel!');
+          }
         });
       });
       console.log(doc.id);
