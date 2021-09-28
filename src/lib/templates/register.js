@@ -70,8 +70,8 @@ export const register = () => {
           user.updateProfile({
             displayName: email,
           })
-            .then(() => { 
-                  return emailVerification();
+            .then(() => {
+                return emailVerification()
             });
         })
         .then(() => {

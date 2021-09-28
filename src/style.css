@@ -285,6 +285,11 @@ tr{
     cursor: pointer;
 }
 
+.saveEdit{
+    display: none;
+    /* visibility: hidden; Este deja el espacion del botón*/
+}
+
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){
     .divFlex {
