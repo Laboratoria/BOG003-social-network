@@ -45,7 +45,7 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log('Entro al else');
     isUserLogin = false;
   }
-  showTemplate(window.location.hash);
+  // showTemplate(window.location.hash);
 });
 
 /*

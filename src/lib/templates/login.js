@@ -22,7 +22,7 @@ export const login = () => {
                 
                 <input type='password' id='passwordlogin' class='signUp' placeholder='Ingresa tu Contraseña' pattern='.{8,}' minlength='8' maxlength='32' required='' autocomplete='off'></input>
             
-                <button type='submit' id='btnLogin' class='btnregister' onclick=''>Iniciar Sesión</button>
+                <button id='btnLogin' class='btnregister' onclick=''>Iniciar Sesión</button>
 
                 <span id='errorMessage' class='errorMessage'></span>
 
