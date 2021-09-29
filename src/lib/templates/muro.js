@@ -141,6 +141,18 @@ export const muro = () => {
         </div>
       `;
 
+      // Que solo el usuario logueado pueda editar y eliminar
+      const currentUserId = firebase.auth().currentUser.uid;
+      const userIdPost = doc.data().userId;
+      // Llamar el btn editar y eliminar
+      const btnEdit = divPost.querySelector('.iconEditar');
+      const btnDelete = divPost.querySelector('.iconEliminar');
+
+      if (currentUserId === userIdPost) {
+        btnEdit.style.display = 'block';
+        btnDelete.style.display = 'block';
+      }
+
       // Funcionalidad boton eliminar
       const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
       botonesEliminar.forEach((btn) => {
