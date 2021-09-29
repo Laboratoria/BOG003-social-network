@@ -273,12 +273,10 @@ tr{
     font-size: 15px;
 }
 
+.iconEditar,
 .iconEliminar{
     cursor: pointer;
-}
-
-.iconEditar{
-    cursor: pointer;
+    display: none
 }
 
 .iconLike{
