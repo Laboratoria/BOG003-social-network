@@ -4,9 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="icon" href="img/Logo-Rosado.svg" />
+  <title>OtaKuGeeK</title>
+  <!-- enlace archivo css -->
+  <link rel="stylesheet" href="style.css" />
+  <!--import font-->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <!--import icons-->
+  <script src="https://kit.fontawesome.com/172df10f30.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
+  <!-- Crear sección conteiner de la app-->
+  <section id = "app" class = "app">
+       
+  </section>
+
+  <!-- Agregar scripts para enlazar Firebase con el proyecto -->
+  <!-- Enlace API firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+  <!-- Enlace firebase componente Autenticación -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  <!-- Enlace firebase componente Store -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+  <!-- Enlace archivo "config.js" confguracion Firebase para que no quede visible en el HTML -->
+  <script src="./lib/firebase/config.js"></script>
+
+  <!-- Enlace con archivo JaveScrip principal -->
   <script type="module" src="main.js"></script>
+
+
 </body>
 </html>

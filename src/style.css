@@ -1,0 +1,302 @@
+/* Limpiar estilos predeterminados e ingresar estilos globales */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family:'Circular-Loom', sans-serif, 'Poppins';
+    box-sizing: border-box;
+}
+
+
+.divFlex{
+
+    width: 100%;
+    height: auto;
+    position: absolute;
+    background: linear-gradient(45deg, rgb(38, 45, 145), rgb(219, 124, 243), rgb(230, 120, 47));
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    
+}
+
+
+/* div que contiene los estilos de bienvenida */
+.welcomeContainer{
+    /* border: silver solid; */
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin: 15px 10px 5px;
+}
+
+
+h1{
+    color: darkturquoise;
+    font-size: 35px;
+    font-weight: 1000;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    text-shadow: -2px -2px 1px darkblue;
+    text-align: center;
+}
+
+h2{
+   color: darkturquoise;
+   text-shadow: -2px -2px 2px darkblue;
+   font-size: 30px;
+   text-align: center;
+
+}
+
+h3{
+    color: whitesmoke;
+    text-shadow: -2px -2px 2px black;
+    text-align: center; 
+}
+
+/*div que contiene los estilos del formulario*/
+.formContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 10px 10px 10px 8px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    gap: 7px;
+    align-items: center;
+}
+
+.signUp{
+    width: 100%;
+    padding: 3px 27px;
+    font-size: 15px;
+}
+
+.errorMessage{
+    color: darkturquoise;
+    font-size: 15px;
+    font-weight: bold;
+    width: 200px;
+
+}
+
+.btnregister{
+    background-color: rgba(34, 34, 82, 0.979);
+    color: whitesmoke;
+    font-size: 18px;
+    border-radius: 15px;
+    padding: 1px 70px;
+    
+}
+
+h4{
+    color: whitesmoke;
+    text-align: center;
+}
+
+.logContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    margin: 0px 10px 20px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    gap: 2px;
+    align-items: center;
+}
+
+.linkLogin{
+    color:darkturquoise;
+    font-size: 20px;
+    text-shadow: -2px -2px 1px darkblue;
+}
+
+/*Estilos Modal*/
+.modalContainer {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+    /* Flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    padding: 10px 20px;
+    height: auto;
+    width: auto;
+    background-color: rebeccapurple;
+    border: black 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    color: mintcream;
+    overflow: hidden;
+    /*flex*/
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-around;
+    gap: 10px;
+    /*Entrada*/
+    position: relative;
+    transform:translateY(0%);
+    transition: 1s;
+
+}
+
+.modal a {
+    color: darkturquoise;
+    font-weight: bold;
+}
+
+/* ESTILOS PAGINA muro.js*/
+header{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(45deg, rgb(38, 45, 145), rgb(219, 124, 243), rgb(230, 120, 47));
+    width: 100%;
+    height: 60px;
+    /*Flex*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilos div para todo el contenido del muro post.js */
+.divMuro{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+}
+
+header h1 {
+    font-size: 15px;
+}
+
+.wallUser{
+    border: silver solid;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 10px 10px;
+    gap: 10px;
+    margin: 70px 10px 5px;
+}
+
+table{
+    width: 50%;
+    display: flex;
+    flex-flow: wrap column;
+}
+
+tr{
+    display: flex;
+    justify-content: space-around;
+}
+
+.postContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 10px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    height: 70px;
+    width: 270px;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+}
+
+.createPost{
+    width: 100%;
+    padding: 3px 10px 3px 3px;
+    font-size: 13px;
+    height: 95%;
+    width: 100%;
+    overflow: auto;
+    border-radius: 5px;
+}
+
+.timeline{
+    border: silver solid;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    margin: 70px 10px 5px;
+}
+
+.userContainer{
+    background-color:rebeccapurple;
+    border-radius: 15px;
+    border: darkblue 2px solid;
+    padding: 10px 30px;
+    margin: 10px 10px 10px 8px;
+    box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+    overflow:auto;
+    /*Flex*/
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    gap: 7px;
+    align-items: center;
+}
+
+/*Estilos de la tarjeta de crear post*/
+.printPost{
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.iconEditar,
+.iconEliminar{
+    cursor: pointer;
+    display: none
+}
+
+.iconLike{
+    cursor: pointer;
+}
+
+.saveEdit{
+    display: none;
+    /* visibility: hidden; Este deja el espacion del botón*/
+}
+
+/*Estilo para Desktop mediaQuery*/
+@media (min-width:768px){
+    .divFlex {
+        height: 100vh;
+        align-items: center;
+    }
+
+    .modal{
+        width: 45%;
+        height: 50%;
+    }
+}
