@@ -118,41 +118,34 @@ export const muro = () => {
       });
   };
 
+  const currentUserId = firebase.auth().currentUser.uid;
+
   // Leer datos del post desde Firestore y mostrar post en muro
   const listTimeline = divPost.querySelector('.timeline');
   // db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
   db.collection('postList').orderBy('Date', 'desc').onSnapshot((querySnapshot) => {
     listTimeline.innerHTML = '';
     querySnapshot.forEach((doc) => {
-      listTimeline.innerHTML += /* HTML */ `
+      listTimeline.innerHTML += `
         <div class='userContainer'>
           <h4>${doc.data().Name}</h4>
           <h4>${doc.data().Date.toDate().toDateString()}</h4>
           <div id='${doc.id}' class='printPost'>${doc.data().Post}</div>
 
-            <!-- Solo se le quito el a ref -->
+            <!-- Solo se le quito el a ref -->   
+            ${currentUserId === doc.data().userId ? `
+      
             <img src='IMG/icono-eliminar-blanco.svg' width='40' alt='icono' class='iconEliminar' data-id = '${doc.id}'>
             
-            <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar' data-id = '${doc.id}' >
-
+            <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar' data-id = '${doc.id}' >` : ''}
+      
             <!-- Crear botton Guardar, cuando el usuario edite el post -->
             <button id = 'saveEdit' class = 'saveEdit'>Guardar</button>
             
             <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>
+
         </div>
       `;
-
-      // Que solo el usuario logueado pueda editar y eliminar
-      const currentUserId = firebase.auth().currentUser.uid;
-      const userIdPost = doc.data().userId;
-      // Llamar el btn editar y eliminar
-      const btnEdit = divPost.querySelector('.iconEditar');
-      const btnDelete = divPost.querySelector('.iconEliminar');
-
-      if (currentUserId === userIdPost) {
-        btnEdit.style.display = 'block';
-        btnDelete.style.display = 'block';
-      }
 
       // Funcionalidad boton eliminar
       const botonesEliminar = divPost.querySelectorAll('.iconEliminar');

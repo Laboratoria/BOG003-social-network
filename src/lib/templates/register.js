@@ -70,9 +70,7 @@ export const register = () => {
           user.updateProfile({
             displayName: email,
           })
-            .then(() => {
-                return emailVerification()
-            });
+            .then(() => emailVerification());
         })
         .then(() => {
           // console.log('Estoy en el then');

@@ -276,7 +276,6 @@ tr{
 .iconEditar,
 .iconEliminar{
     cursor: pointer;
-    display: none
 }
 
 .iconLike{
