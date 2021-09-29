@@ -73,6 +73,7 @@ export const muro = () => {
         Post: postPublish,
         Name: user.displayName,
         Date: firebase.firestore.FieldValue.serverTimestamp(),
+        userId: user.uid,
       })
       .then((docRef) => {
         console.log('Document written with ID: ', docRef.id);
