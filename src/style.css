@@ -203,17 +203,6 @@ header h1 {
     margin: 70px 10px 5px;
 }
 
-table{
-    width: 50%;
-    display: flex;
-    flex-flow: wrap column;
-}
-
-tr{
-    display: flex;
-    justify-content: space-around;
-}
-
 .postContainer{
     background-color:rebeccapurple;
     border-radius: 15px;
@@ -295,7 +284,11 @@ tr{
     }
 
     .modal{
-        width: 45%;
-        height: 50%;
+        width: 60%;
+        height: 60%;
+        align-items: center;
+        overflow: hidden;
+        display: block;
+        padding-top: 20px;
     }
 }
