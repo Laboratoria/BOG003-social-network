@@ -1,4 +1,3 @@
-/* import { login } from './login'; */
 // Importar función regGoogle y regEmail fromm auth.js
 import { createUser, emailVerification } from '../firebase/auth.js';
 
@@ -73,7 +72,6 @@ export const register = () => {
             .then(() => emailVerification());
         })
         .then(() => {
-          // console.log('Estoy en el then');
           divRegister.querySelector('#modalContainer').style.visibility = 'visible';
         })
         .catch((error) => {

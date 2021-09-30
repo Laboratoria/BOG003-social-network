@@ -1,4 +1,4 @@
-import { closeSession } from '../firebase/auth.js';
+import { closeSession, addLike, removeLike } from '../firebase/auth.js';
 
 export const muro = () => {
   // div contenedor de la vista div padre
@@ -16,19 +16,7 @@ export const muro = () => {
           </header>
           <div class = 'wallUser'>
               <img src='IMG/Naruto.png' width='' alt='naruto' class='imgNaruto'>
-              <h2>¡Hola!</h2> 
-              <!-- <div id='titleUser'><div>-->  
-              <table>
-                <tr>
-                  <td>Post</td>
-                  <td>Likes</td>
-                </tr>
-                <tr>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-              </table>
-              
+              <h2>¡Hola!</h2>               
               <div class='postContainer'>
                 <input type='text' id='createPost' class='createPost' placeholder='¿Qué te gustaría compartir hoy?'/>
               </div>
@@ -106,7 +94,6 @@ export const muro = () => {
   const updatePost = (id) => {
     const postRef = db.collection('postList').doc(id);
     const postPublish = divPost.querySelector('#editPost').value;
-    // Set the "capital" field of the city 'DC'
     console.log(id, 'Recibio ID');
     return postRef.update({
       Post: postPublish,
@@ -124,7 +111,6 @@ export const muro = () => {
 
   // Leer datos del post desde Firestore y mostrar post en muro
   const listTimeline = divPost.querySelector('.timeline');
-  // db.collection('postList').orderBy('Date', 'desc').get().then((querySnapshot) => {
   db.collection('postList').orderBy('Date', 'desc').onSnapshot((querySnapshot) => {
     listTimeline.innerHTML = '';
     querySnapshot.forEach((doc) => {
@@ -145,9 +131,26 @@ export const muro = () => {
             <button id = 'saveEdit' class = 'saveEdit' data-id = '${doc.id}'>Guardar</button>
             
             <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike' data-id = '${doc.id}'>
-
+            
+            <div id=num-likes class="-likes-count"> ${doc.data().likes.length}</div>   
         </div>
       `;
+
+      // Funcionalidad botón like
+      const buttonLike = divPost.querySelectorAll('.iconLike');
+      buttonLike.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          const like = doc.data().likes;
+
+          if (like.includes(currentUserId)) {
+            removeLike(currentUserId, e.target.dataset.id);
+            console.log(like);
+          } else {
+            addLike(currentUserId, e.target.dataset.id);
+            console.log(like);
+          }
+        });
+      });
 
       // Funcionalidad boton eliminar
       const botonesEliminar = divPost.querySelectorAll('.iconEliminar');
@@ -174,7 +177,6 @@ export const muro = () => {
           document.getElementById(e.target.dataset.id).innerHTML = `
           <textarea id='editPost'>${textPost}</textarea>
           `;
-          // const changeButton = document.getElementsByClassName('saveEdit');
           console.log('saveEdit');
           divPost.querySelector('.saveEdit').style.display = 'block';
           divPost.querySelector('.iconEditar').style.display = 'none';
@@ -188,6 +190,5 @@ export const muro = () => {
       });
     });
   });
-
   return divPost;
 };
