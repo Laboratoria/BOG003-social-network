@@ -74,6 +74,7 @@ export const muro = () => {
         Name: user.displayName,
         Date: firebase.firestore.FieldValue.serverTimestamp(),
         userId: user.uid,
+        likes: [],
       })
       .then((docRef) => {
         console.log('Document written with ID: ', docRef.id);
@@ -106,6 +107,7 @@ export const muro = () => {
     const postRef = db.collection('postList').doc(id);
     const postPublish = divPost.querySelector('#editPost').value;
     // Set the "capital" field of the city 'DC'
+    console.log(id, 'Recibio ID');
     return postRef.update({
       Post: postPublish,
     })
@@ -140,9 +142,9 @@ export const muro = () => {
             <img src='IMG/icono-editar.svg' width='48' alt='icono' class='iconEditar' data-id = '${doc.id}' >` : ''}
       
             <!-- Crear botton Guardar, cuando el usuario edite el post -->
-            <button id = 'saveEdit' class = 'saveEdit'>Guardar</button>
+            <button id = 'saveEdit' class = 'saveEdit' data-id = '${doc.id}'>Guardar</button>
             
-            <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike'>
+            <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike' data-id = '${doc.id}'>
 
         </div>
       `;
@@ -172,18 +174,17 @@ export const muro = () => {
           document.getElementById(e.target.dataset.id).innerHTML = `
           <textarea id='editPost'>${textPost}</textarea>
           `;
-          updatePost(e.target.dataset.id);
           // const changeButton = document.getElementsByClassName('saveEdit');
           console.log('saveEdit');
           divPost.querySelector('.saveEdit').style.display = 'block';
+          divPost.querySelector('.iconEditar').style.display = 'none';
         });
       });
       // Funcionalidad boton guardar
       const btnSave = divPost.querySelector('.saveEdit');
-      btnSave.addEventListener('click', () => {
-        // updatePost();
+      btnSave.addEventListener('click', (e) => {
+        updatePost(e.target.dataset.id);
         console.log('hola bienvenicoso');
-        savePost();
       });
     });
   });
