@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+  .old-man {
+    display: block;
+  }
+
+  .old-man img {
+    height: 500px;
+  }
+
+  .young-guy {
+    display: none;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 4rem;
+  }
+
+  .log-in {
+    padding: 2.5rem 2rem;
+    width: 30%;
+  }
+
+  .logo-long img {
+    width: 250px;
+  }
+}
