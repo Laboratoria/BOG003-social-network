@@ -118,7 +118,7 @@ export const muro = () => {
         <div class='userContainer'>
           <h4>${doc.data().Name}</h4>
           <h4>${doc.data().Date.toDate().toDateString()}</h4>
-          <div id='${doc.id}' class='printPost'>${doc.data().Post}</div>
+          <div id='${doc.id}' class='printPost'><p class='texto'>${doc.data().Post}</p></div>
 
             <!-- Solo se le quito el a ref -->   
             ${currentUserId === doc.data().userId ? `
@@ -130,9 +130,11 @@ export const muro = () => {
             <!-- Crear botton Guardar, cuando el usuario edite el post -->
             <button id = 'saveEdit' class = 'saveEdit' data-id = '${doc.id}'>Guardar</button>
             
-            <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike' data-id = '${doc.id}'>
+            <div class='likesDiv'>
+              <img src='IMG/icono-like-blanco.png' width='48' alt='icono' class='iconLike' data-id = '${doc.id}'>
             
-            <div id=num-likes class="-likes-count"> ${doc.data().likes.length}</div>   
+              <div id=num-likes class="likes-count"> ${doc.data().likes.length}</div>  
+            </div> 
         </div>
       `;
 
