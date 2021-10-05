@@ -40,4 +40,3 @@ export const addLike = (userId, id) => db.collection('postList').doc(id).update(
 export const removeLike = (userId, id) => db.collection('postList').doc(id).update(({
   likes: firebase.firestore.FieldValue.arrayRemove(userId),
 }));
-

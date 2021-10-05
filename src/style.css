@@ -193,7 +193,7 @@ header h1 {
 }
 
 .wallUser{
-    border: silver solid;
+    /* border: silver solid; */
     /*Flex*/
     display: flex;
     flex-flow: wrap column;
@@ -235,17 +235,19 @@ header h1 {
     align-items: center;
     padding: 10px;
     gap: 10px;
-    margin: 70px 10px 5px;
+    margin: 30px 10px 5px;
+    width: 91%;
 }
 
 .userContainer{
     background-color:rebeccapurple;
     border-radius: 15px;
     border: darkblue 2px solid;
-    padding: 10px 30px;
+    padding: 10px 20px;
     margin: 10px 10px 10px 8px;
     box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
     overflow:auto;
+    width: 95%;
     /*Flex*/
     display: flex;
     flex-flow: wrap row;
@@ -276,6 +278,22 @@ header h1 {
     /* visibility: hidden; Este deja el espacion del botón*/
 }
 
+.likes-count{
+    color: whitesmoke;
+}
+
+.texto{
+    width: 100%;
+    flex-wrap: wrap;
+    display: inline-block;
+    overflow: hidden;
+}
+.likesDiv{
+    display: flex;
+    align-items: center;
+}
+
+
 /*Estilo para Desktop mediaQuery*/
 @media (min-width:768px){
     .divFlex {
@@ -291,4 +309,20 @@ header h1 {
         display: block;
         padding-top: 20px;
     }
+
+    .timeline{
+        padding: 0px;
+        margin: 0px;
+        width: 50%;
+        margin: 70px 10px 5px;
+    }
+
+    .userContainer{
+        padding: 10px 30px;
+        margin: 10px 10px 10px 8px;
+        box-shadow: 3px 2px 2px 0px rgb(82, 82, 90);
+        overflow:auto;
+        width: 90%;
+    }
+
 }
